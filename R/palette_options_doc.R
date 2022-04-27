@@ -1,0 +1,17 @@
+#' @title LTER Palette Options
+#'
+#' @description For each palette data includes the photographer, LTER site, number of included colors, and the hex codes for each color (data are in wide format)
+#'
+#' @format A dataframe with 14 variables and one row per palette (currently 14 rows)
+#' \describe{
+#'   \item{photographer}{name of the photographer who took the picture}
+#'   \item{palette_full_name}{concatenation of LTER site and palette name, separated by a hyphen}
+#'   \item{lter_site}{three-letter LTER site name abbreviation}
+#'   \item{palette_name}{a unique-within site-name for each palette based on the picture's content}
+#'   \item{palette_type}{either "qualitative", "sequential", or "diverging" depending on the pattern of colors in the palette}
+#'   \item{palette_length}{an integer of how many colors are included in the palette}
+#'   \item{color_...}{the HEX code for colors 1 through n for}
+#' }
+#' 
+#' @source {Lyon, N. J., De La Rosa, G. 2022.}
+"palette_options"

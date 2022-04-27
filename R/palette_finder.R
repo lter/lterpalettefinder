@@ -24,6 +24,10 @@
 #' lter_palette_finder(site = "AND")
 #' 
 palette_finder <- function(site = "all", name = "all", type = "all", length = "all"){
+  
+  # Get data
+  palette_options <- system.file(c("extdata", "palette_options.csv"), package = "lterpalettefinder")
+  
   # Handle unspecified arguments
   if(site == "all"){ site <- unique(palette_options$lter_site) }
   if(name == "all"){ name <- unique(palette_options$palette_name) }
