@@ -1,11 +1,21 @@
 Package: lterpalettefinder
 Type: Package
-Title: What the Package Does (Title Case)
+Title: Identify Palettes Extracted from LTER Photos
 Version: 0.1.0
-Author: Who wrote it
-Maintainer: The package maintainer <yourself@somewhere.net>
+Authors@R: c(person(given = 'Nicholas J', family = 'Lyon', role = c('aut', "cre"), comment = 'https://orcid.org/0000-0003-3905-1078', email = "njlyon@alumni.iastate.edu"))
+Author: Nicholas Lyon [aut, cre]
+Maintainer: Nicholas Lyon <njlyon@alumni.iastate.edu>
+
+
 Description: More about what it does (maybe more than one line)
     Use four spaces when indenting paragraphs within the Description.
-License: What license is it under?
+
+
+License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
+RoxygenNote: 7.1.2
+Imports: 
+    dplyr,
+    magrittr,
+    tidyr
