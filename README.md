@@ -6,7 +6,12 @@
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of `lterpalettefinder` is to …
+The goal of `lterpalettefinder` is to provide high quality color
+palettes derived from photos at LTER sites. This allows users to create
+beautiful graphics that have close visual ties to photos from the places
+where data were collected. This package also allows users to generate
+their own palettes from any photo (.PNG only) if the current palettes in
+the function do not meet their needs.
 
 ## Installation
 
