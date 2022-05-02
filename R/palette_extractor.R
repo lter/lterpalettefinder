@@ -6,21 +6,28 @@
 #' @param progress_bar Logical (TRUE / FALSE) indicating whether printing a progress bar in the console as the function extracts colors is desired
 #' 
 #' @return A dataframe of a single column ("hex_code") containing all hexadecimal codes remaining after extraction and removal of 'dark' and 'similar' colors.
+#' @importFrom magrittr %>%
 #' @export
 #'
 #' @examples
-#' # Extract colors from a supplied image
-#' my_colors <- palette_extractor(image = file.path("Path", "to", "picture.png"), progress_bar = TRUE)
+#' ## This example is commented out because that's not a real file path or PNG file.
+#' ## This example will work if you change the first line to point to an existing .PNG
 #' 
-#' # Create a plot to evaluate the HEX codes and facilitate selection of which you want
-#' ggplot(my_colors, aes(x = hex_code, y = 1, fill = hex_code)) +
-#' geom_bar(stat = 'identity') +
-#'   scale_fill_manual(values = my_colors$hex_code) +
-#'   theme(legend.position = 'none',
-#'        axis.text.x = element_text(angle = 35, hjust = 1))
+#' ## Extract colors from a supplied image
+#' # my_colors <- palette_extractor(image = file.path("Path", "to", "picture.png"),
+#' #  progress_bar = TRUE)
+#' 
+#' ## Create a plot to evaluate the HEX codes and facilitate selection of which you want
+#' # ggplot(my_colors, aes(x = hex_code, y = 1, fill = hex_code)) +
+#' # geom_bar(stat = 'identity') +
+#' # scale_fill_manual(values = my_colors$hex_code) +
+#' # theme(legend.position = 'none', axis.text.x = element_text(angle = 35, hjust = 1))
 #'        
 #' 
 palette_extractor <- function(image, progress_bar = TRUE){
+  # To squelch error in variable bindings, call all unquoted variables as NULL
+  red <- green <- blue <- rgb_combo <- numR <- numG <- numB <- RG <- GB <- BR <- NULL
+  
   # Return a warning if PNG isn't in the name of the file
   if(stringr::str_detect(string = image, pattern = '.png') == FALSE){
     print('PNG suffix not detected in `image` argument. File may not be a .PNG. Please check that file is in PNG format and specify the suffix.')
