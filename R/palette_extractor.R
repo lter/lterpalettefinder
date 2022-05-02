@@ -26,7 +26,8 @@
 #' 
 palette_extractor <- function(image, progress_bar = TRUE){
   # To squelch error in variable bindings, call all unquoted variables as NULL
-  red <- green <- blue <- rgb_combo <- numR <- numG <- numB <- RG <- GB <- BR <- NULL
+  red <- green <- blue <- rgb_combo <- NULL
+  factR <- factG <- factB <- RG <- GB <- BR <- NULL
   
   # Return a warning if PNG isn't in the name of the file
   if(stringr::str_detect(string = image, pattern = '.png') == FALSE){
@@ -62,17 +63,27 @@ palette_extractor <- function(image, progress_bar = TRUE){
     # Progress bar (PB)
     if(progress_bar == TRUE) {print('{============================          }')}
     
+    # Identify hexadecimal order
+    hex_ord <- c('0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f')
+    
     ## Split back out colors for filtering assistance
     hex_v3 <- dplyr::mutate(.data = hex_v2,
                             red = stringr::str_sub(rgb_combo, start = 1, end = 1),
                             green = stringr::str_sub(rgb_combo, start = 2, end = 2),
                             blue = stringr::str_sub(rgb_combo, start = 3, end = 3),
-                            numR = base::suppressWarnings(base::as.numeric(red)),
-                            numG = base::suppressWarnings(base::as.numeric(green)),
-                            numB = base::suppressWarnings(base::as.numeric(blue)))
+                            factR = factor(red, levels = hex_ord),
+                            factG = factor(green, levels = hex_ord),
+                            factB = factor(blue, levels = hex_ord))
     
-    ## Remove really dark colors that are likely less useful
-    hex_v4 <- dplyr::filter(.data = hex_v3, dplyr::if_all(numR:numB) >= 6 | dplyr::if_any(numR:numB, is.na))
+    ## Remove really dark and really light colors that are likely less useful
+    hex_v4 <- dplyr::filter(.data = hex_v3,
+                            base::as.integer(factR) >= 6 &
+                              base::as.integer(factG) >= 6 &
+                              base::as.integer(factB) >= 6 & 
+                              base::as.integer(factR) <= 15 &
+                              base::as.integer(factG) <= 15 &
+                              base::as.integer(factB) <= 15) %>%
+      dplyr::select(-factR, -factG, -factB)
     
     # Progress bar (PB)
     if(progress_bar == TRUE) {print('{==================================    }')}
