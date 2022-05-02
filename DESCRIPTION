@@ -13,6 +13,8 @@ RoxygenNote: 7.1.2
 Imports: 
     dplyr,
     magrittr,
-    tidyr,
     png,
-    stringr
+    stringr,
+    tidyr,
+    usethis,
+    utils
