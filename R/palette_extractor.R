@@ -72,7 +72,7 @@ palette_extractor <- function(image, progress_bar = TRUE){
                             numB = base::suppressWarnings(base::as.numeric(blue)))
     
     ## Remove really dark colors that are likely less useful
-    hex_v4 <- dplyr::filter(.data = hex_v3, dplyr::if_all(numR:numB) >= 7 | dplyr::if_any(numR:numB, is.na))
+    hex_v4 <- dplyr::filter(.data = hex_v3, dplyr::if_all(numR:numB) >= 6 | dplyr::if_any(numR:numB, is.na))
     
     # Progress bar (PB)
     if(progress_bar == TRUE) {print('{==================================    }')}
