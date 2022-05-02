@@ -26,12 +26,12 @@ From a dataframe of all possible palettes (updated periodically so check back!) 
 lterpalettefinder::palette_finder()
 
 # What if our query returns NO options?
-lter_palette_finder(length = 1)
+palette_finder(length = 1)
 
 # What if our query returns MULTIPLE options?
-lter_palette_finder(length = 5, site = "HBR")
+palette_finder(length = 5, site = "HBR")
 
 # What if our query returns JUST ONE option? (this is desirable)
-lter_palette_finder(site = "AND")
+palette_finder(site = "AND")
 
 }

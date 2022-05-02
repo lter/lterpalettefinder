@@ -15,18 +15,17 @@
 #' lterpalettefinder::palette_finder()
 #'
 #' # What if our query returns NO options?
-#' lter_palette_finder(length = 1)
+#' palette_finder(length = 1)
 #' 
 #' # What if our query returns MULTIPLE options?
-#' lter_palette_finder(length = 5, site = "HBR")
+#' palette_finder(length = 5, site = "HBR")
 #' 
 #' # What if our query returns JUST ONE option? (this is desirable)
-#' lter_palette_finder(site = "AND")
+#' palette_finder(site = "AND")
 #' 
 palette_finder <- function(site = "all", name = "all", type = "all", length = "all"){
-  
-  # Get data
-  palette_options <- system.file(c("extdata", "palette_options.csv"), package = "lterpalettefinder")
+  # Retrieve data
+  palette_options <- lterpalettefinder::palette_options
   
   # Handle unspecified arguments
   if(site == "all"){ site <- unique(palette_options$lter_site) }
@@ -35,15 +34,15 @@ palette_finder <- function(site = "all", name = "all", type = "all", length = "a
   if(length == "all"){ length <- unique(palette_options$palette_length) }
   
   # Subset by each condition
-  palt_v1 <- dplyr::filter(palette_options, lter_site %in% site)
-  palt_v2 <- dplyr::filter(palt_v1, palette_name %in% name)
-  palt_v3 <- dplyr::filter(palt_v2, palette_type %in% type)
-  palt_v4 <- dplyr::filter(palt_v3, palette_length %in% length)
+  palt_v1 <- dplyr::filter(palette_options, palette_options$lter_site %in% site)
+  palt_v2 <- dplyr::filter(palt_v1, palt_v1$palette_name %in% name)
+  palt_v3 <- dplyr::filter(palt_v2, palt_v2$palette_type %in% type)
+  palt_v4 <- dplyr::filter(palt_v3, palt_v3$palette_length %in% length)
   
   # Remove color columns that have no entries in the given subset
   palt_v5 <- tidyr::pivot_longer(data = palt_v4, cols = dplyr::starts_with('color'),
                                  names_to = 'color_num', values_to = 'color_hex')
-  palt_v6 <- dplyr::filter(palt_v5, nchar(color_hex) == 7)
+  palt_v6 <- dplyr::filter(palt_v5, nchar(palt_v5$color_hex) == 7)
   palt_v7 <- tidyr::pivot_wider(data = palt_v6, names_from = "color_num", values_from = "color_hex")
   
   # Make it a dataframe
