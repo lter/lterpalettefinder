@@ -75,14 +75,11 @@ palette_extractor <- function(image, progress_bar = TRUE){
                             factG = factor(green, levels = hex_ord),
                             factB = factor(blue, levels = hex_ord))
     
-    ## Remove really dark and really light colors that are likely less useful
+    ## Remove really dark colors that are likely less useful
     hex_v4 <- dplyr::filter(.data = hex_v3,
                             base::as.integer(factR) >= 6 &
                               base::as.integer(factG) >= 6 &
-                              base::as.integer(factB) >= 6 & 
-                              base::as.integer(factR) <= 15 &
-                              base::as.integer(factG) <= 15 &
-                              base::as.integer(factB) <= 15) %>%
+                              base::as.integer(factB) >= 6) %>%
       dplyr::select(-factR, -factG, -factB)
     
     # Progress bar (PB)
