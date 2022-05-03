@@ -95,7 +95,7 @@ palette_extractor <- function(image, progress_bar = TRUE){
     
     ## Perform k-means clustering
     hex_v6 <- base::as.data.frame(stats::kmeans(x = hex_v5, centers = 25,
-                                                iter.max = 15, nstart = 1)$centers)
+                                                iter.max = 100, nstart = 1)$centers)
     
     ## Transform integers back into hexadecimals
     hex_v7 <- hex_v6 %>%
@@ -103,7 +103,7 @@ palette_extractor <- function(image, progress_bar = TRUE){
                     green = base::as.integer(G),
                     blue = base::as.integer(B)) %>%
       dplyr::mutate(color_id = 1:base::nrow(.)) %>%
-      tidyr::pivot_longer(cols = red, green, blue, names_to = 'color',
+      tidyr::pivot_longer(cols = red:blue, names_to = 'color',
                           values_to = 'value') %>%
       dplyr::mutate(
         value = dplyr::case_when(
