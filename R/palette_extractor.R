@@ -27,7 +27,8 @@
 palette_extractor <- function(image, progress_bar = TRUE){
   # To squelch error in variable bindings, call all unquoted variables as NULL
   red <- green <- blue <- rgb_combo <- NULL
-  factR <- factG <- factB <- RG <- GB <- BR <- NULL
+  factR <- factG <- factB <- R <- G <- B <- NULL
+  color_id <- color <- value <- . <- NULL
   
   # Return a warning if PNG isn't in the name of the file
   if(stringr::str_detect(string = image, pattern = '.png') == FALSE){
@@ -80,41 +81,50 @@ palette_extractor <- function(image, progress_bar = TRUE){
                             base::as.integer(factR) >= 6 &
                               base::as.integer(factG) >= 6 &
                               base::as.integer(factB) >= 6) %>%
-      dplyr::select(-factR, -factG, -factB)
+      dplyr::select(factR, factG, factB)
     
     # Progress bar (PB)
     if(progress_bar == TRUE) {print('{==================================    }')}
     
-    ## Group by each pairwise combo of R/G/B channels and pick only one observation
-    ### red - green
-    hex_v5 <- hex_v4 %>%
-      dplyr::mutate(RG = paste0(red, green)) %>%
-      dplyr::group_by(RG) %>%
-      dplyr::summarise(red = dplyr::first(red),
-                       green = dplyr::first(green),
-                       blue = dplyr::first(blue))
-    ### green - blue
-    hex_v6 <- hex_v5 %>%
-      dplyr::mutate(GB = paste0(green, blue)) %>%
-      dplyr::group_by(GB) %>%
-      dplyr::summarise(red = dplyr::first(red),
-                       green = dplyr::first(green),
-                       blue = dplyr::first(blue))
-    ### blue - red
+    ## Get integer versions of the factors
+    hex_v5 <- dplyr::mutate(.data = hex_v4,
+                            R = base::as.integer(factR),
+                            G = base::as.integer(factG),
+                            B = base::as.integer(factB)) %>%
+      dplyr::select(R, G, B)
+    
+    ## Perform k-means clustering
+    hex_v6 <- base::as.data.frame(stats::kmeans(x = hex_v5, centers = 25,
+                                                iter.max = 15, nstart = 1)$centers)
+    
+    ## Transform integers back into hexadecimals
     hex_v7 <- hex_v6 %>%
-      dplyr::mutate(BR = paste0(blue, red)) %>%
-      dplyr::group_by(BR) %>%
-      dplyr::summarise(red = dplyr::first(red),
-                       green = dplyr::first(green),
-                       blue = dplyr::first(blue)) %>%
-      dplyr::ungroup()
+      dplyr::mutate(red = base::as.integer(R),
+                    green = base::as.integer(G),
+                    blue = base::as.integer(B)) %>%
+      dplyr::mutate(color_id = 1:base::nrow(.)) %>%
+      tidyr::pivot_longer(cols = red, green, blue, names_to = 'color',
+                          values_to = 'value') %>%
+      dplyr::mutate(
+        value = dplyr::case_when(
+          value == 1 ~ '0', value == 2 ~ '1', value == 3 ~ '2',
+          value == 4 ~ '3', value == 5 ~ '4', value == 6 ~ '5', 
+          value == 7 ~ '6', value == 8 ~ '7', value == 9 ~ '8',
+          value == 10 ~ '9', value == 11 ~ 'a', value == 12 ~ 'b',
+          value == 13 ~ 'c', value == 14 ~ 'd',
+          value == 15 ~ 'e', value == 16 ~ 'f') ) %>%
+      tidyr::pivot_wider(id_cols = color_id, names_from = color,
+                         values_from = value)
     
     # Progress bar (PB)
     if(progress_bar == TRUE) {print('{====================================  }')}
     
     ## Create hexadecimal codes from RGB
     hex_v8 <- dplyr::mutate(.data = hex_v7,
-                            hex_code = paste0('#', red, red, green, green, blue, blue))
+                            hex_code = paste0('#',
+                                              red, red,
+                                              green, green,
+                                              blue, blue))
     
     ## Keep only hex codes
     hex_v9 <- base::data.frame(hex_code = hex_v8$hex_code)
