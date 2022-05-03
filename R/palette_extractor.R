@@ -127,7 +127,9 @@ palette_extractor <- function(image, progress_bar = TRUE){
                                               blue, blue))
     
     ## Keep only hex codes
-    hex_v9 <- base::data.frame(hex_code = hex_v8$hex_code)
+    hex_v9 <- base::data.frame(hex_code = base::unique(hex_v8$hex_code))
+    
+    ## And return only unique values
     
     # Progress bar finish
     if(progress_bar == TRUE) {print('{======================================}')}
