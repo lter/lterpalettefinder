@@ -12,26 +12,26 @@
 #'
 #' @examples
 #' # Look at all palette options by calling the function without specifying arguments
-#' lterpalettefinder::palette_finder()
+#' lterpalettefinder::palette_find()
 #'
 #' # What if our query returns NO options?
-#' palette_finder(length = 1)
+#' palette_find(length = 1)
 #' 
 #' # What if our query returns MULTIPLE options?
-#' palette_finder(length = 5, site = "HBR")
+#' palette_find(length = 5, site = "HBR")
 #' 
 #' # What if our query returns JUST ONE option? (this is desirable)
-#' palette_finder(site = "AND")
+#' palette_find(site = "AND")
 #' 
-palette_finder <- function(site = "all", name = "all", type = "all", length = "all"){
+palette_find <- function(site = "all", name = "all", type = "all", length = "all"){
   # Retrieve data
   palette_options <- lterpalettefinder::palette_options
   
   # Handle unspecified arguments
-  if(site == "all"){ site <- unique(palette_options$lter_site) }
-  if(name == "all"){ name <- unique(palette_options$palette_name) }
-  if(type == "all"){ type <- unique(palette_options$palette_type) }
-  if(length == "all"){ length <- unique(palette_options$palette_length) }
+  if(site == "all"){ site <- base::unique(palette_options$lter_site) }
+  if(name == "all"){ name <- base::unique(palette_options$palette_name) }
+  if(type == "all"){ type <- base::unique(palette_options$palette_type) }
+  if(length == "all"){ length <- base::unique(palette_options$palette_length) }
   
   # Subset by each condition
   palt_v1 <- dplyr::filter(palette_options, palette_options$lter_site %in% site)
@@ -49,16 +49,16 @@ palette_finder <- function(site = "all", name = "all", type = "all", length = "a
   palt <- as.data.frame(palt_v7)
   
   # Return informative messages based on outcome
-  if(nrow(palt) == 0){ print("No palette met the user-supplied conditions. Run function without specifying any arguments to see available palette options")
+  if(base::nrow(palt) == 0){ print("No palette met the user-supplied conditions. Run function without specifying any arguments to see available palette options")
     return(palt) } else {
       
-  if(nrow(palt) > 1){
+  if(base::nrow(palt) > 1){
     print("Multiple options returned as a dataframe. Consider specifying subset and re-running function.")
     return(palt) } else {
   
-  if(nrow(palt == 1)){
+  if(base::nrow(palt == 1)){
     print("Exactly one palette identified. Output cropped to only HEX codes for ease of plotting")
-    palt_simp <- as.vector(dplyr::select(.data = palt, dplyr::starts_with('color')))
-    colnames(palt_simp) <- NULL
+    palt_simp <- base::as.vector(dplyr::select(.data = palt, dplyr::starts_with('color')))
+    base::colnames(palt_simp) <- NULL
     return(palt_simp)
   } } } }
