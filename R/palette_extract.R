@@ -14,17 +14,14 @@
 #' ## This example will work if you change the first line to point to an existing .PNG
 #' 
 #' ## Extract colors from a supplied image
-#' # my_colors <- palette_extractor(image = file.path("Path", "to", "picture.png"),
+#' # my_colors <- palette_extract(image = file.path("Path", "to", "picture.png"),
 #' #  progress_bar = TRUE)
 #' 
-#' ## Create a plot to evaluate the HEX codes and facilitate selection of which you want
-#' # ggplot(my_colors, aes(x = hex_code, y = 1, fill = hex_code)) +
-#' # geom_bar(stat = 'identity') +
-#' # scale_fill_manual(values = my_colors$hex_code) +
-#' # theme(legend.position = 'none', axis.text.x = element_text(angle = 35, hjust = 1))
+#' ## Look at the returned HEX codes
+#' # my_colors
 #'        
 #' 
-palette_extractor <- function(image, progress_bar = TRUE){
+palette_extract <- function(image, progress_bar = TRUE){
   # To squelch error in variable bindings, call all unquoted variables as NULL
   rawRGB <- red <- green <- blue <- NULL
   
