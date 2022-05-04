@@ -31,7 +31,7 @@ Accepts the hexadecimal code dataframe returned by `palette_extract()` and creat
 ## This example will work if you change the first line to point to an existing .PNG
 
 ## Extract colors from a supplied image
-# my_colors <- palette_extractor(image = file.path("Path", "to", "picture.png"),
+# my_colors <- palette_extract(image = file.path("Path", "to", "picture.png"),
 #  progress_bar = TRUE)
 
 ## Create a plot to evaluate the HEX codes and facilitate selection of which you want

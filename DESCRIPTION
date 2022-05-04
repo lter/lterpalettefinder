@@ -7,12 +7,13 @@ Author: Nicholas Lyon [aut, cre]
 Maintainer: Nicholas Lyon <njlyon@alumni.iastate.edu>
 Description: Allows identification of palettes derived from LTER photographs based on user criteria.
 License: MIT + file LICENSE
-Depends: R (>= 3.5.0)
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 7.1.2
 Imports: 
     dplyr,
+    graphics,
+    grDevices,
     magrittr,
     png,
     stats,
