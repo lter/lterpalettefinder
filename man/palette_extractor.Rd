@@ -15,7 +15,7 @@ palette_extractor(image, progress_bar = TRUE)
 A dataframe of a single column ("hex_code") containing all hexadecimal codes remaining after extraction and removal of 'dark' and 'similar' colors.
 }
 \description{
-Retrieves hexadecimal codes for the colors in an image file. Currently only .PNG files are supported. The function automatically removes dark colors (i.e., colors where the red, green, and blue channels are less than 7) and removes 'similar' colors to yield a set of a few dozen colors (varies between images) from which you can select the subset that works best for your visualization needs. Note that photos that are very dark may return few viable colors and photos that are a single color may not return as many hex codes as more diverse images.
+Retrieves hexadecimal codes for the colors in an image file. Currently only .PNG files are supported. The function automatically removes dark colors and removes 'similar' colors to yield 25 colors from which you can select the subset that works best for your visualization needs. Note that photos that are very dark may return few viable colors.
 }
 \examples{
 ## This example is commented out because that's not a real file path or PNG file.
