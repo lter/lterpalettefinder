@@ -7,7 +7,7 @@
 palette_extract(image, progress_bar = TRUE)
 }
 \arguments{
-\item{image}{Name of the .PNG file to extract colors from (only .PNGs are supported at this time)}
+\item{image}{Name/path to .PNG file to extract colors from (only .PNGs are supported at this time)}
 
 \item{progress_bar}{Logical (TRUE / FALSE) indicating whether printing a progress bar in the console as the function extracts colors is desired}
 }
