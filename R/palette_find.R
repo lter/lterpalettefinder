@@ -49,15 +49,16 @@ palette_find <- function(site = "all", name = "all", type = "all", length = "all
   palt <- as.data.frame(palt_v7)
   
   # Return informative messages based on outcome
-  if(base::nrow(palt) == 0){ print("No palette met the user-supplied conditions. Run function without specifying any arguments to see available palette options")
+  if(base::nrow(palt) == 0){
+    base::message("No palette met the user-supplied conditions. Run function without specifying any arguments to see available palette options")
     return(palt) } else {
       
   if(base::nrow(palt) > 1){
-    print("Multiple options returned as a dataframe. Consider specifying subset and re-running function.")
+    base::message("Multiple options returned as a dataframe. Consider specifying subset and re-running function.")
     return(palt) } else {
   
   if(base::nrow(palt == 1)){
-    print("Exactly one palette identified. Output cropped to only HEX codes for ease of plotting")
+    base::message("Exactly one palette identified. Output cropped to only HEX codes for ease of plotting")
     palt_simp <- base::as.vector(dplyr::select(.data = palt, dplyr::starts_with('color')))
     base::colnames(palt_simp) <- NULL
     return(palt_simp)

@@ -9,7 +9,7 @@ palette_extract(image, progress_bar = TRUE)
 \arguments{
 \item{image}{Name/path to .PNG file to extract colors from (only .PNGs are supported at this time)}
 
-\item{progress_bar}{Logical (TRUE / FALSE) indicating whether printing a progress bar in the console as the function extracts colors is desired}
+\item{progress_bar}{Logical (TRUE / FALSE) indicating whether a progress bar is desired}
 }
 \value{
 A dataframe of a single column ("hex_code") containing all hexadecimal codes remaining after extraction and removal of 'dark' and 'similar' colors.
