@@ -28,25 +28,25 @@ palette_extract <- function(image, progress_bar = TRUE){
   # Warning for unsupported image type(s)
   if (stringr::str_detect(string = image, pattern = ".png") == 
       FALSE) {
-    print("PNG suffix not detected in `image` argument. File may not be a .PNG. Please check that file is in PNG format and specify the suffix.")
+    base::message("PNG suffix not detected in `image` argument. File may not be a .PNG. Please check that file is in PNG format and specify the suffix.")
   } else {
     
     # Read picture
-    if (progress_bar == TRUE) {print("{=         }")} # 1
+    if (progress_bar == TRUE) {base::message("{=         }")} # 1
     pic <- png::readPNG(source = image, native = FALSE)
     
     # Extract RGB channels
-      if (progress_bar == TRUE) {print("{==        }")} # 2
+      if (progress_bar == TRUE) {base::message("{==        }")} # 2
     rawR <- base::as.integer(pic[,,1] * 255)
     rawG <- base::as.integer(pic[,,2] * 255)
     rawB <- base::as.integer(pic[,,3] * 255)
     
     # Put them into a dataframe
-    if (progress_bar == TRUE) {print("{===       }")} # 3
+    if (progress_bar == TRUE) {base::message("{===       }")} # 3
     rgb_v1 <- base::data.frame(red = rawR, green = rawG, blue = rawB)
     
     # Subset out very dark colors
-    if (progress_bar == TRUE) {print("{====      }")} # 4
+    if (progress_bar == TRUE) {base::message("{====      }")} # 4
     rgb_v2 <- dplyr::filter(.data = rgb_v1,
                             red >= 65 & green >= 65 & blue >= 65)
     
