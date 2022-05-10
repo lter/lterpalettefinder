@@ -1,8 +1,8 @@
 #' @title Extract Hexadecimal Codes from an Image
 #' 
-#' @description Retrieves hexadecimal codes for the colors in an image file. Currently only .PNG files are supported. The function automatically removes dark colors and removes 'similar' colors to yield 25 colors from which you can select the subset that works best for your visualization needs. Note that photos that are very dark may return few viable colors.
+#' @description Retrieves hexadecimal codes for the colors in an image file. Currently only PNG, JPEG, and TIFF files are supported. The function automatically removes dark colors and removes 'similar' colors to yield 25 colors from which you can select the subset that works best for your visualization needs. Note that photos that are very dark may return few viable colors.
 #' 
-#' @param image Name/path to .PNG file to extract colors from (only .PNGs are supported at this time)
+#' @param image Name/path to PNG, JPEG, or TIFF file from which to extract colors
 #' @param progress_bar Logical (TRUE / FALSE) indicating whether a progress bar is desired
 #' 
 #' @return A dataframe of a single column ("hex_code") containing all hexadecimal codes remaining after extraction and removal of 'dark' and 'similar' colors.
@@ -24,15 +24,22 @@ palette_extract <- function(image, progress_bar = TRUE){
   # To squelch error in variable bindings, call all unquoted variables as NULL
   rawRGB <- red <- green <- blue <- NULL
   
-  # Warning for unsupported image type(s)
-  if (stringr::str_detect(string = image, pattern = ".png") == 
-      FALSE) {
-    base::message("PNG suffix not detected in `image` argument. File may not be a .PNG. Please check that file is in PNG format and specify the suffix.")
-  } else {
-    
-    # Read picture
-    if (progress_bar == TRUE) {base::message("{=         }")} # 1
-    pic <- png::readPNG(source = image, native = FALSE)
+  # Error for unspecified file suffix
+  if(!tools::file_ext(image) %in% c("png", "jpg", "tiff") &
+     nchar(tools::file_ext(image)) == 0) stop('No file suffix specified')
+  
+  # Error for unsupported image type(s)
+  if(!tools::file_ext(image) %in% c("png", "jpg", "tiff") &
+     nchar(tools::file_ext(image)) != 0) stop('Only PNG, JPG, and TIFF files are accepted. Please convert your image to one of these and re-run')
+  
+  if (progress_bar == TRUE) { base::message("{=         }") } # 1
+  # Read file in with file type-appropriate function
+  if(tools::file_ext(image) == "png"){
+    pic <- png::readPNG(source = image, native = FALSE) }
+  if(tools::file_ext(image) == "jpg"){
+    pic <- jpeg::readJPEG(source = image, native = FALSE) }
+  if(tools::file_ext(image) == "tiff"){
+    pic <- tiff::readTIFF(source = image, native = FALSE) }
     
     # Extract RGB channels
       if (progress_bar == TRUE) {base::message("{==        }")} # 2
@@ -82,4 +89,4 @@ palette_extract <- function(image, progress_bar = TRUE){
     # Return only unique values to the user
     if (progress_bar == TRUE) {base::message("{==========}")} # 10
     hex_out <- base::data.frame(hex_code = base::unique(hex_vec))
-    } }
+    }

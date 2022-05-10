@@ -31,7 +31,8 @@ This package currently includes a few functions
     palette and returns the palette(s) that we have already created that
     meet those criteria
 -   `palette_extract()` allows you to extract hexadecimal codes from a
-    picture of your choosing (only PNG format is currently supported)
+    picture of your choosing (only PNG, TIFF, and JPEG formats are
+    currently supported)
 -   `palette_demo()` allows you to quickly evaluate the colors returned
     by `palette_extract()` and export the demo plot if desired
 
