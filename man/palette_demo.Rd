@@ -27,14 +27,13 @@ A plot of the retrieved colors labeled with their HEX codes
 Accepts the hexadecimal code dataframe returned by `palette_extract()` and creates a simple plot of all returned colors labeled with their HEX codes. This will facilitate (hopefully) your selection of which of the 25 colors you would like to use in a given context.
 }
 \examples{
-## This example is commented out because that's not a real file path or PNG file.
-## This example will work if you change the first line to point to an existing .PNG
+# Extract colors from a supplied image
+my_colors <- palette_extract(image = system.file("extdata", "lyon-fire.png",
+package = "lterpalettefinder"))
 
-## Extract colors from a supplied image
-# my_colors <- palette_extract(image = file.path("Path", "to", "picture.png"),
-#  progress_bar = TRUE)
-
-## Create a plot to evaluate the HEX codes and facilitate selection of which you want
-# palette_demo(palette = my_colors)
+# Look at the returned hexadecimal codes
+       
+# Plot that result
+palette_demo(palette = my_colors)
 
 }

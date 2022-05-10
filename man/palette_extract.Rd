@@ -18,15 +18,13 @@ A dataframe of a single column ("hex_code") containing all hexadecimal codes rem
 Retrieves hexadecimal codes for the colors in an image file. Currently only .PNG files are supported. The function automatically removes dark colors and removes 'similar' colors to yield 25 colors from which you can select the subset that works best for your visualization needs. Note that photos that are very dark may return few viable colors.
 }
 \examples{
-## This example is commented out because that's not a real file path or PNG file.
-## This example will work if you change the first line to point to an existing .PNG
+# Extract colors from a supplied image
+my_colors <- palette_extract(image = system.file("extdata", "lyon-fire.png",
+package = "lterpalettefinder"))
 
-## Extract colors from a supplied image
-# my_colors <- palette_extract(image = file.path("Path", "to", "picture.png"),
-#  progress_bar = TRUE)
-
-## Look at the returned HEX codes
-# my_colors
+# Look at the returned hexadecimal codes
        
+# Plot that result
+palette_demo(palette = my_colors)
 
 }

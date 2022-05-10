@@ -10,16 +10,15 @@
 #' @export
 #'
 #' @examples
-#' ## This example is commented out because that's not a real file path or PNG file.
-#' ## This example will work if you change the first line to point to an existing .PNG
+#' # Extract colors from a supplied image
+#' my_colors <- palette_extract(image = system.file("extdata", "lyon-fire.png",
+#' package = "lterpalettefinder"))
 #' 
-#' ## Extract colors from a supplied image
-#' # my_colors <- palette_extract(image = file.path("Path", "to", "picture.png"),
-#' #  progress_bar = TRUE)
-#' 
-#' ## Look at the returned HEX codes
-#' # my_colors
+#' # Look at the returned hexadecimal codes
+# my_colors
 #'        
+#' # Plot that result
+#' palette_demo(palette = my_colors)
 #' 
 palette_extract <- function(image, progress_bar = TRUE){
   # To squelch error in variable bindings, call all unquoted variables as NULL
