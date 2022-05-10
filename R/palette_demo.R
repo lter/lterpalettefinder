@@ -14,9 +14,6 @@
 #' # Extract colors from a supplied image
 #' my_colors <- palette_extract(image = system.file("extdata", "lyon-fire.png",
 #' package = "lterpalettefinder"))
-#' 
-#' # Look at the returned hexadecimal codes
-# my_colors
 #'        
 #' # Plot that result
 #' palette_demo(palette = my_colors)
