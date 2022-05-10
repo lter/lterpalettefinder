@@ -33,9 +33,13 @@ devtools::install_github("njlyon0/lterpalettefinder")
 
 This package currently includes a few functions
 
-- `palette_find()` allows you to specify criteria for your desired palette and returns the palette(s) that we have already created that meet those criteria
-- `palette_extract()` allows you to extract hexadecimal codes from a picture of your choosing (only PNG, TIFF, and JPEG formats are currently supported)
-- `palette_demo()` allows you to quickly evaluate the colors returned by `palette_extract()` and export the demo plot if desired
+- **`palette_find()`** returns "official" palette(s) that we have already created that criteria you specify
+
+- **`palette_extract()`** extracts 25 colors' hexadecimal codes from a picture of your choosing (only PNG, TIFF, and JPEG formats are currently supported)
+
+- **`palette_sort()`** sorts output of `palette_extract()` by hue and saturation to approximate how human eyes group colors (this can be done either inside `palette_extract()` with an optional argument or separately)
+
+- **`palette_demo()`** creates an exploratory graph of the colors returned by either `palette_extract()` or `palette_sort()` and provides an option to export that plot if desired
 
 ## Palette Examples
 
