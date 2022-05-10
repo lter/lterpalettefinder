@@ -4,10 +4,12 @@
 \alias{palette_extract}
 \title{Extract Hexadecimal Codes from an Image}
 \usage{
-palette_extract(image, progress_bar = TRUE)
+palette_extract(image, sort = FALSE, progress_bar = TRUE)
 }
 \arguments{
 \item{image}{Name/path to PNG, JPEG, or TIFF file from which to extract colors}
+
+\item{sort}{Logical (TRUE / FALSE) indicating whether extracted HEX codes should be sorted by hue and saturation}
 
 \item{progress_bar}{Logical (TRUE / FALSE) indicating whether a progress bar is desired}
 }

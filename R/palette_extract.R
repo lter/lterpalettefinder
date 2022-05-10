@@ -3,6 +3,7 @@
 #' @description Retrieves hexadecimal codes for the colors in an image file. Currently only PNG, JPEG, and TIFF files are supported. The function automatically removes dark colors and removes 'similar' colors to yield 25 colors from which you can select the subset that works best for your visualization needs. Note that photos that are very dark may return few viable colors.
 #' 
 #' @param image Name/path to PNG, JPEG, or TIFF file from which to extract colors
+#' @param sort Logical (TRUE / FALSE) indicating whether extracted HEX codes should be sorted by hue and saturation
 #' @param progress_bar Logical (TRUE / FALSE) indicating whether a progress bar is desired
 #' 
 #' @return A dataframe of a single column ("hex_code") containing all hexadecimal codes remaining after extraction and removal of 'dark' and 'similar' colors.
@@ -17,7 +18,8 @@
 #' # Plot that result
 #' palette_demo(palette = my_colors)
 #' 
-palette_extract <- function(image, progress_bar = TRUE){
+palette_extract <- function(image, sort = FALSE,
+                            progress_bar = TRUE){
   # To squelch error in variable bindings, call all unquoted variables as NULL
   rawRGB <- red <- green <- blue <- NULL
   
@@ -79,11 +81,22 @@ palette_extract <- function(image, progress_bar = TRUE){
     
     # Bind hexadecimals into HEX codes
     if (progress_bar == TRUE) {base::message("{========= }")} # 9
-    hex_vec <- base::paste0('#', base::as.character(hexR),
+    hex_vec <- base::paste0('#',
+                            base::as.character(hexR),
                             base::as.character(hexG),
                             base::as.character(hexB))
     
     # Return only unique values to the user
     if (progress_bar == TRUE) {base::message("{==========}")} # 10
     hex_out <- base::data.frame(hex_code = base::unique(hex_vec))
+    
+    # If sorting is requested, sort the output colors
+    if(sort == TRUE){
+      base::message("Sorting colors")
+      hex_sort <- lterpalettefinder::palette_sort(palette = hex_out)
+      return(hex_sort)
+      
+      # Otherwise return the unsorted ones
+      } else { return(hex_out) }
+    
     }
