@@ -11,15 +11,15 @@
 #' @export
 #'
 #' @examples
-#' ## This example is commented out because that's not a real file path or PNG file.
-#' ## This example will work if you change the first line to point to an existing .PNG
+#' # Extract colors from a supplied image
+#' my_colors <- palette_extract(image = system.file("extdata", "lyon-fire.png",
+#' package = "lterpalettefinder"))
 #' 
-#' ## Extract colors from a supplied image
-#' # my_colors <- palette_extract(image = file.path("Path", "to", "picture.png"),
-#' #  progress_bar = TRUE)
-#' 
-#' ## Create a plot to evaluate the HEX codes and facilitate selection of which you want
-#' # palette_demo(palette = my_colors)
+#' # Look at the returned hexadecimal codes
+# my_colors
+#'        
+#' # Plot that result
+#' palette_demo(palette = my_colors)
 #' 
 palette_demo <- function(palette, export = FALSE,
                          export_name = "my_palette",

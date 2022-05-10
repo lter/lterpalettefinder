@@ -14,10 +14,13 @@ Imports:
     dplyr,
     graphics,
     grDevices,
+    jpeg,
     magrittr,
     png,
     stats,
     stringr,
+    tools,
     tidyr,
+    tiff,
     usethis,
     utils
