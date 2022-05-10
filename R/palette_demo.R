@@ -32,6 +32,7 @@ palette_demo <- function(palette, export = FALSE,
                y = base::rep(x = c(1, 3, 5, 2, 4), times = 5),
                col = hexes, pch = 19, cex = 6,
                xlab = '', ylab = '',
+               xaxt = "n", yaxt = "n",
                ylim = c(0.5, 5.5),
                xlim = c(-1, base::nrow(palette) + 1))
     # And add the hex codes on top of the colors
@@ -51,6 +52,7 @@ palette_demo <- function(palette, export = FALSE,
                y = rep(x = c(1, 3, 5, 2, 4), times = 5),
                col = hexes, pch = 19, cex = 6,
                xlab = '', ylab = '',
+               xaxt = "n", yaxt = "n",
                ylim = c(0.5, 5.5),
                xlim = c(-1, nrow(palette) + 1))
     # And add the hex codes on top of the colors
