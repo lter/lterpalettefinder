@@ -20,7 +20,7 @@ You can install the development version of `lterpalettefinder` from
 
 ``` r
 # install.packages("devtools")
-devtools::install_github("njlyon0/lterpalettefinder")
+devtools::install_github("lter/lterpalettefinder")
 ```
 
 ## Functions
