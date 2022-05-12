@@ -2,7 +2,7 @@
 % Please edit documentation in R/palette_demo.R
 \name{palette_demo}
 \alias{palette_demo}
-\title{Demonstrate Extracted Palette with HEX Labels}
+\title{Demonstrate Extracted Palette with HEX Labels - Base Plot Edition}
 \usage{
 palette_demo(
   palette,
@@ -12,7 +12,7 @@ palette_demo(
 )
 }
 \arguments{
-\item{palette}{One-column dataframe returned by `palette_extract()`}
+\item{palette}{Vector returned by `palette_extract()` or `palette_sort()`}
 
 \item{export}{Logical of whether or not to export the demo plot}
 
@@ -24,7 +24,7 @@ palette_demo(
 A plot of the retrieved colors labeled with their HEX codes
 }
 \description{
-Accepts the hexadecimal code dataframe returned by `palette_extract()` and creates a simple plot of all returned colors labeled with their HEX codes. This will facilitate (hopefully) your selection of which of the 25 colors you would like to use in a given context.
+Accepts the hexadecimal code vector returned by `palette_extract()` or `palette_sort()` and creates a base plot of all returned colors labeled with their HEX codes. This will facilitate (hopefully) your selection of which of the 25 colors you would like to use in a given context.
 }
 \examples{
 # Extract colors from a supplied image

@@ -1,8 +1,8 @@
 #' @title Sort Hexadecimal Codes from an Image
 #' 
-#' @description Sorts hexademical codes retrieved by `palette_extract()` by hue and saturation. This allows for reasonably good identification of 'similar' colors in the way that a human eye would perceive them (as opposed to a computer's representation of colors).
+#' @description Sorts hexademical codes retrieved by `palette_extract()`  by hue and saturation. This allows for reasonably good identification of 'similar' colors in the way that a human eye would perceive them (as opposed to a computer's representation of colors).
 #' 
-#' @param palette palette One-column dataframe returned by `palette_extract()`
+#' @param palette Vector returned by `palette_extract()`
 #' 
 #' @return Vector containing all hexadecimal codes returned by `palette_extract()`
 #' 

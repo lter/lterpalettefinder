@@ -7,13 +7,13 @@
 palette_sort(palette)
 }
 \arguments{
-\item{palette}{palette One-column dataframe returned by `palette_extract()`}
+\item{palette}{Vector returned by `palette_extract()`}
 }
 \value{
 Vector containing all hexadecimal codes returned by `palette_extract()`
 }
 \description{
-Sorts hexademical codes retrieved by `palette_extract()` by hue and saturation. This allows for reasonably good identification of 'similar' colors in the way that a human eye would perceive them (as opposed to a computer's representation of colors).
+Sorts hexademical codes retrieved by `palette_extract()`  by hue and saturation. This allows for reasonably good identification of 'similar' colors in the way that a human eye would perceive them (as opposed to a computer's representation of colors).
 }
 \examples{
 # Extract colors from a supplied image
