@@ -29,9 +29,14 @@ palette_sort <- function(palette){
   max_val <- min_val <- binR <- binG <- binB <- NULL
   hexR <- hexG <- hexB <- hue <- saturation <- hex_code <- NULL
   
+  # Get back to dataframe if not one
+  if(base::is.null(base::nrow(palette))){
+    palette <- base::data.frame(hex_code = palette)
+  }
+  
   # Strip RGB back out of HEX codes
   rgb <- base::as.data.frame(
-    base::t(grDevices::col2rgb(palette)))
+    base::t(grDevices::col2rgb(palette[,1])))
   
   # Coerce to 0-1
   rgb_v2 <- rgb %>%
