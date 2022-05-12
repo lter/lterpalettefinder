@@ -23,22 +23,22 @@ palette_demo <- function(palette, export = FALSE,
                          export_path = getwd()){
   
   # Strip out the hex codes to use as a vector later
-  hexes <- base::as.vector(palette[,1])
+  hexes <- palette
   
   # If the user doesn't want to export the plot...
   if(export == FALSE) {
     # Just plot the colors
-    base::plot(x = 1:base::nrow(palette),
+    base::plot(x = 1:base::length(palette),
                y = base::rep(x = c(1, 3, 5, 2, 4), times = 5),
                col = hexes, pch = 19, cex = 6,
                xlab = '', ylab = '',
                xaxt = "n", yaxt = "n",
                ylim = c(0.5, 5.5),
-               xlim = c(-1, base::nrow(palette) + 1))
+               xlim = c(-1, base::length(palette) + 1))
     # And add the hex codes on top of the colors
-    graphics::text(x = 1:base::nrow(palette),
+    graphics::text(x = 1:base::length(palette),
          y = rep(x = c(1, 3, 5, 2, 4), times = 5),
-         labels = base::as.vector(palette[,1]), cex = 0.6)
+         labels = palette, cex = 0.6)
   }
   
   # If the user does want to export, export it!
@@ -48,17 +48,17 @@ palette_demo <- function(palette, export = FALSE,
          quality = 600, res = 1080,
          width = 4, height = 4, units = 'in')
     # Just plot the colors
-    base::plot(x = 1:nrow(palette),
-               y = rep(x = c(1, 3, 5, 2, 4), times = 5),
+    base::plot(x = 1:base::length(palette),
+               y = base::rep(x = c(1, 3, 5, 2, 4), times = 5),
                col = hexes, pch = 19, cex = 6,
                xlab = '', ylab = '',
                xaxt = "n", yaxt = "n",
                ylim = c(0.5, 5.5),
-               xlim = c(-1, nrow(palette) + 1))
+               xlim = c(-1, base::length(palette) + 1))
     # And add the hex codes on top of the colors
-    graphics::text(x = 1:base::nrow(palette),
+    graphics::text(x = 1:base::length(palette),
                    y = rep(x = c(1, 3, 5, 2, 4), times = 5),
-                   labels = base::as.vector(palette[,1]), cex = 0.6)
+                   labels = palette, cex = 0.6)
     # And dev.off out
     grDevices::dev.off()
   }

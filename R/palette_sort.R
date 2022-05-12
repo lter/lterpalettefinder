@@ -4,7 +4,7 @@
 #' 
 #' @param palette palette One-column dataframe returned by `palette_extract()`
 #' 
-#' @return A dataframe of a single column ("hex_code") containing all hexadecimal codes returned by `palette_extract()`
+#' @return Vector containing all hexadecimal codes returned by `palette_extract()`
 #' 
 #' @importFrom magrittr %>%
 #' @export
@@ -31,7 +31,7 @@ palette_sort <- function(palette){
   
   # Strip RGB back out of HEX codes
   rgb <- base::as.data.frame(
-    base::t(grDevices::col2rgb(palette$hex_code)))
+    base::t(grDevices::col2rgb(palette)))
   
   # Coerce to 0-1
   rgb_v2 <- rgb %>%
@@ -89,4 +89,7 @@ palette_sort <- function(palette){
   
   # Get only hex_code
   hex_out <- dplyr::select(.data = rgb_v7, hex_code)
+  
+  # Return as vector
+  hex_vec <- hex_out$hex_code
   }

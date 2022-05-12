@@ -6,7 +6,7 @@
 #' @param sort Logical (TRUE / FALSE) indicating whether extracted HEX codes should be sorted by hue and saturation
 #' @param progress_bar Logical (TRUE / FALSE) indicating whether a progress bar is desired
 #' 
-#' @return A dataframe of a single column ("hex_code") containing all hexadecimal codes remaining after extraction and removal of 'dark' and 'similar' colors.
+#' @return Vector containing all hexadecimal codes remaining after extraction and removal of 'dark' and 'similar' colors.
 #' @importFrom magrittr %>%
 #' @export
 #'
@@ -108,6 +108,6 @@ palette_extract <- function(image, sort = FALSE,
       return(hex_sort)
       
       # Otherwise return the unsorted ones
-      } else { return(hex_out) }
+      } else { return(hex_out$hex_code) }
     
     }

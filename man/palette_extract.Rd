@@ -14,7 +14,7 @@ palette_extract(image, sort = FALSE, progress_bar = TRUE)
 \item{progress_bar}{Logical (TRUE / FALSE) indicating whether a progress bar is desired}
 }
 \value{
-A dataframe of a single column ("hex_code") containing all hexadecimal codes remaining after extraction and removal of 'dark' and 'similar' colors.
+Vector containing all hexadecimal codes remaining after extraction and removal of 'dark' and 'similar' colors.
 }
 \description{
 Retrieves hexadecimal codes for the colors in an image file. Currently only PNG, JPEG, TIFF, and HEIC files are supported. The function automatically removes dark colors and removes 'similar' colors to yield 25 colors from which you can select the subset that works best for your visualization needs. Note that photos that are very dark may return few viable colors.

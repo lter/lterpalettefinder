@@ -10,7 +10,7 @@ palette_sort(palette)
 \item{palette}{palette One-column dataframe returned by `palette_extract()`}
 }
 \value{
-A dataframe of a single column ("hex_code") containing all hexadecimal codes returned by `palette_extract()`
+Vector containing all hexadecimal codes returned by `palette_extract()`
 }
 \description{
 Sorts hexademical codes retrieved by `palette_extract()` by hue and saturation. This allows for reasonably good identification of 'similar' colors in the way that a human eye would perceive them (as opposed to a computer's representation of colors).
