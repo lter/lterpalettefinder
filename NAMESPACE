@@ -3,5 +3,6 @@
 export(palette_demo)
 export(palette_extract)
 export(palette_find)
+export(palette_ggdemo)
 export(palette_sort)
 importFrom(magrittr,"%>%")
