@@ -46,7 +46,7 @@ palette_extract <- function(image, sort = FALSE,
     magick::image_write(image = heic_temp, format = "png",
                         path = "temp-heic-transform.png")
     # Read PNG version in
-    pic <- png::readPNG(source = image, native = FALSE) 
+    pic <- png::readPNG(source = "temp-heic-transform.png", native = FALSE) 
     # Delete the temporary file
     base::unlink(x = "temp-heic-transform.png",
                  recursive = FALSE, force = FALSE) }
