@@ -10,8 +10,8 @@ The goal of `lterpalettefinder` is to provide high quality color
 palettes derived from photos at LTER sites. This allows users to create
 beautiful graphics that have close visual ties to photos from the places
 where data were collected. This package also allows users to generate
-their own palettes from any photo (.PNG only) if the current palettes in
-the function do not meet their needs.
+their own palettes from any photo (PNG, JPEG, TIFF, and HEIC only) if
+the current palettes in the function do not meet their needs.
 
 ## Installation
 
@@ -39,9 +39,12 @@ This package currently includes a few functions
     done either inside `palette_extract()` with an optional argument or
     separately)
 
--   **`palette_demo()`** creates an exploratory graph of the colors
-    returned by either `palette_extract()` or `palette_sort()` and
-    provides an option to export that plot if desired
+-   **`palette_demo()`** creates an exploratory base R graph of the
+    colors returned by either `palette_extract()` or `palette_sort()`
+    and provides an option to export that plot if desired
+
+-   **`palette_ggdemo()`** creates an exploratory `ggplot2` graph of the
+    colors returned by either `palette_extract()` or `palette_sort()`
 
 ## Palette Examples
 
