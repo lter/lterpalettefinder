@@ -1,8 +1,8 @@
 #' @title Extract Hexadecimal Codes from an Image
 #' 
-#' @description Retrieves hexadecimal codes for the colors in an image file. Currently only PNG, JPEG, and TIFF files are supported. The function automatically removes dark colors and removes 'similar' colors to yield 25 colors from which you can select the subset that works best for your visualization needs. Note that photos that are very dark may return few viable colors.
+#' @description Retrieves hexadecimal codes for the colors in an image file. Currently only PNG, JPEG, TIFF, and HEIC files are supported. The function automatically removes dark colors and removes 'similar' colors to yield 25 colors from which you can select the subset that works best for your visualization needs. Note that photos that are very dark may return few viable colors.
 #' 
-#' @param image Name/path to PNG, JPEG, or TIFF file from which to extract colors
+#' @param image Name/path to PNG, JPEG, TIFF, or HEIC file from which to extract colors
 #' @param sort Logical (TRUE / FALSE) indicating whether extracted HEX codes should be sorted by hue and saturation
 #' @param progress_bar Logical (TRUE / FALSE) indicating whether a progress bar is desired
 #' 
@@ -24,12 +24,12 @@ palette_extract <- function(image, sort = FALSE,
   rawRGB <- red <- green <- blue <- NULL
   
   # Error for unspecified file suffix
-  if(!tools::file_ext(image) %in% c("png", "jpg", "tiff") &
+  if(!tools::file_ext(image) %in% c("png", "jpg", "tiff", "heic") &
      nchar(tools::file_ext(image)) == 0) stop('No file suffix specified')
   
   # Error for unsupported image type(s)
-  if(!tools::file_ext(image) %in% c("png", "jpg", "tiff") &
-     nchar(tools::file_ext(image)) != 0) stop('Only PNG, JPG, and TIFF files are accepted. Please convert your image to one of these and re-run')
+  if(!tools::file_ext(image) %in% c("png", "jpg", "tiff", "heic") &
+     nchar(tools::file_ext(image)) != 0) stop('Only PNG, JPG, TIFF, and HEIC files are accepted. Please convert your image to one of these and re-run')
   
   if (progress_bar == TRUE) { base::message("{=         }") } # 1
   # Read file in with file type-appropriate function
@@ -39,9 +39,20 @@ palette_extract <- function(image, sort = FALSE,
     pic <- jpeg::readJPEG(source = image, native = FALSE) }
   if(tools::file_ext(image) == "tiff"){
     pic <- tiff::readTIFF(source = image, native = FALSE) }
+  if(tools::file_ext(image) == "heic"){
+    # Read HEIC
+    heic_temp <- magick::image_read(path = image)
+    # Write as PNG
+    magick::image_write(image = heic_temp, format = "png",
+                        path = "temp-heic-transform.png")
+    # Read PNG version in
+    pic <- png::readPNG(source = image, native = FALSE) 
+    # Delete the temporary file
+    base::unlink(x = "temp-heic-transform.png",
+                 recursive = FALSE, force = FALSE) }
     
     # Extract RGB channels
-      if (progress_bar == TRUE) {base::message("{==        }")} # 2
+    if (progress_bar == TRUE) {base::message("{==        }")} # 2
     rawR <- base::as.integer(pic[,,1] * 255)
     rawG <- base::as.integer(pic[,,2] * 255)
     rawB <- base::as.integer(pic[,,3] * 255)

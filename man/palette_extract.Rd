@@ -7,7 +7,7 @@
 palette_extract(image, sort = FALSE, progress_bar = TRUE)
 }
 \arguments{
-\item{image}{Name/path to PNG, JPEG, or TIFF file from which to extract colors}
+\item{image}{Name/path to PNG, JPEG, TIFF, or HEIC file from which to extract colors}
 
 \item{sort}{Logical (TRUE / FALSE) indicating whether extracted HEX codes should be sorted by hue and saturation}
 
@@ -17,7 +17,7 @@ palette_extract(image, sort = FALSE, progress_bar = TRUE)
 A dataframe of a single column ("hex_code") containing all hexadecimal codes remaining after extraction and removal of 'dark' and 'similar' colors.
 }
 \description{
-Retrieves hexadecimal codes for the colors in an image file. Currently only PNG, JPEG, and TIFF files are supported. The function automatically removes dark colors and removes 'similar' colors to yield 25 colors from which you can select the subset that works best for your visualization needs. Note that photos that are very dark may return few viable colors.
+Retrieves hexadecimal codes for the colors in an image file. Currently only PNG, JPEG, TIFF, and HEIC files are supported. The function automatically removes dark colors and removes 'similar' colors to yield 25 colors from which you can select the subset that works best for your visualization needs. Note that photos that are very dark may return few viable colors.
 }
 \examples{
 # Extract colors from a supplied image

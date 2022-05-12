@@ -15,6 +15,7 @@ Imports:
     graphics,
     grDevices,
     jpeg,
+    magick,
     magrittr,
     png,
     stats,
