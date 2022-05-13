@@ -39,9 +39,9 @@ This package currently includes a few functions
 
 - **`palette_sort()`** sorts output of `palette_extract()` by hue and saturation to approximate how human eyes group colors
 
-- **`palette_demo()`** creates an exploratory base R graph of the colors returned by either `palette_extract()` or `palette_sort()` and provides an option to export that plot if desired
+- **`palette_demo()`** creates an exploratory base R graph from a vector of hexadecimal codes (like that returned by either `palette_extract()` or `palette_sort()`) and provides an option to export that plot if desired
 
-- **`palette_ggdemo()`** creates an exploratory `ggplot2` graph of the colors returned by either `palette_extract()` or `palette_sort()`
+- **`palette_ggdemo()`** creates an exploratory `ggplot2` graph from a vector of hexadecimal codes (like that returned by either `palette_extract()` or `palette_sort()`)
 
 ## Palette Examples
 
