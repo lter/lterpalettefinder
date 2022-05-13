@@ -46,4 +46,29 @@ This package currently includes a few functions
 
 ## Palette Examples
 
-This part of the README is in development so stay tuned!
+These palette examples were generated from photos at LTER sites.
+
+#### [Santa Barbara Coastal LTER](https://sbclter.msi.ucsb.edu/)
+
+![Photo credit: SBC
+LTER](https://lternet.edu/wp-content/uploads/2022/05/sbc.png)
+
+#### [North Temperate Lakes LTER](https://lter.limnology.wisc.edu/)
+
+![Photo credit: Carl
+Bowser](https://lternet.edu/wp-content/uploads/2022/05/ntl.png)
+
+#### [Kellogg Biological Station LTER](https://lter.kbs.msu.edu/)
+
+![Photo credit: G.P. Robertson, Michigan State
+University](https://lternet.edu/wp-content/uploads/2022/05/kbs.png)
+
+#### [Jornada Basin LTER](https://lter.jornada.nmsu.edu/)
+
+![Photo credit: Brandon
+Bestelmeyer](https://lternet.edu/wp-content/uploads/2022/05/jrn.png)
+
+### [Hubbard Brook LTER](https://hubbardbrook.org/hubbard-brook-long-term-ecological-research-program)
+
+![Photo credit: Lindsey
+Rustad](https://lternet.edu/wp-content/uploads/2022/05/hbr.png)
