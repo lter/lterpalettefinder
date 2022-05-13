@@ -1,4 +1,4 @@
-#' @title Sort Hexadecimal Codes from an Image
+#' @title Sort Hexadecimal Codes by Hue and Saturation
 #' 
 #' @description Sorts hexademical codes retrieved by `palette_extract()`  by hue and saturation. This allows for reasonably good identification of 'similar' colors in the way that a human eye would perceive them (as opposed to a computer's representation of colors).
 #' 
