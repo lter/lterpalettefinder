@@ -99,15 +99,19 @@ palette_extract <- function(image, sort = FALSE,
     
     # Return only unique values to the user
     if (progress_bar == TRUE) {base::message("{==========}")} # 10
-    hex_out <- base::data.frame(hex_code = base::unique(hex_vec))
+    hexes <- base::data.frame(hex_code = base::unique(hex_vec))
     
-    # If sorting is requested, sort the output colors
-    if(sort == TRUE){
-      base::message("Sorting colors")
-      hex_sort <- lterpalettefinder::palette_sort(palette = hex_out)
-      return(hex_sort)
+    # Make it a vector
+    hex_vec <- hexes$hex_code
+    
+    # If sorting is not requested, return unsorted vec
+    if(sort == FALSE){ 
+      return(hex_vec) 
+      } else { 
       
-      # Otherwise return the unsorted ones
-      } else { return(hex_out$hex_code) }
-    
+    # Otherwise sort the output colors
+      base::message("Sorting colors")
+      hex_sort <- lterpalettefinder::palette_sort(palette = hex_vec)
+      return(hex_sort)
+      }
     }

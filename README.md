@@ -10,8 +10,8 @@ The goal of `lterpalettefinder` is to provide high quality color
 palettes derived from photos at LTER sites. This allows users to create
 beautiful graphics that have close visual ties to photos from the places
 where data were collected. This package also allows users to generate
-their own palettes from any photo (PNG, JPEG, TIFF, and HEIC only) if
-the current palettes in the function do not meet their needs.
+their own palettes from any photo (PNG, JPEG, TIFF, or HEIC) if the
+current palettes in the function do not meet their needs.
 
 ## Installation
 
@@ -28,16 +28,14 @@ devtools::install_github("lter/lterpalettefinder")
 This package currently includes a few functions
 
 -   **`palette_find()`** returns “official” palette(s) that we have
-    already created that criteria you specify
+    already created that meet criteria you specify
 
 -   **`palette_extract()`** extracts 25 colors’ hexadecimal codes from a
-    picture of your choosing (only PNG, TIFF, and JPEG formats are
+    picture of your choosing (PNG, JPEG, TIFF, and HEIC formats are
     currently supported)
 
 -   **`palette_sort()`** sorts output of `palette_extract()` by hue and
-    saturation to approximate how human eyes group colors (this can be
-    done either inside `palette_extract()` with an optional argument or
-    separately)
+    saturation to approximate how human eyes group colors
 
 -   **`palette_demo()`** creates an exploratory base R graph of the
     colors returned by either `palette_extract()` or `palette_sort()`
