@@ -22,6 +22,9 @@ palette_demo <- function(palette, export = FALSE,
                          export_name = "my_palette",
                          export_path = getwd()){
   
+  # Reject palettes longer than 25
+  if(base::length(palette) > 25) stop("More than 25 colors is unsupported by this function. Give this function no more than 25 HEX codes or use `palette_ggdemo()` which will accept any number of colors")
+  
   # If the user doesn't want to export the plot...
   if(export == FALSE) {
     # Just plot the colors
