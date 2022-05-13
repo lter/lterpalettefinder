@@ -12,7 +12,7 @@ palette_demo(
 )
 }
 \arguments{
-\item{palette}{Vector returned by `palette_extract()` or `palette_sort()`}
+\item{palette}{Vector of hexadecimal codes like that returned by `palette_extract()` or `palette_sort()`}
 
 \item{export}{Logical of whether or not to export the demo plot}
 
