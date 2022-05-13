@@ -37,7 +37,7 @@ This package currently includes a few functions
 
 - **`palette_extract()`** extracts 25 colors' hexadecimal codes from a picture of your choosing (PNG, JPEG, TIFF, and HEIC formats are currently supported)
 
-- **`palette_sort()`** sorts output of `palette_extract()` by hue and saturation to approximate how human eyes group colors (this can be done either inside `palette_extract()` with an optional argument or independently)
+- **`palette_sort()`** sorts output of `palette_extract()` by hue and saturation to approximate how human eyes group colors
 
 - **`palette_demo()`** creates an exploratory base R graph of the colors returned by either `palette_extract()` or `palette_sort()` and provides an option to export that plot if desired
 

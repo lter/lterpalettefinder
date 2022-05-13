@@ -35,9 +35,7 @@ This package currently includes a few functions
     currently supported)
 
 -   **`palette_sort()`** sorts output of `palette_extract()` by hue and
-    saturation to approximate how human eyes group colors (this can be
-    done either inside `palette_extract()` with an optional argument or
-    independently)
+    saturation to approximate how human eyes group colors
 
 -   **`palette_demo()`** creates an exploratory base R graph of the
     colors returned by either `palette_extract()` or `palette_sort()`
