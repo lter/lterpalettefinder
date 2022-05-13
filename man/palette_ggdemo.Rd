@@ -7,13 +7,13 @@
 palette_ggdemo(palette)
 }
 \arguments{
-\item{palette}{Vector of hexadecimal codes returned by `palette_extract()` or `palette_sort()`}
+\item{palette}{Vector of hexadecimal codes returned by `palette_extract()`, `..._sort()`, or `..._subsample()`}
 }
 \value{
 A ggplot2 plot
 }
 \description{
-Accepts the hexadecimal code vector returned by `palette_extract()` or `palette_sort()` and creates a simple plot of all returned colors labeled with their HEX codes. This will facilitate (hopefully) your selection of which of the 25 colors you would like to use in a given context.
+Accepts the hexadecimal code vector returned by `palette_extract()`, `..._sort()`, or `..._subsample()` and creates a simple plot of all returned colors labeled with their HEX codes. This will facilitate (hopefully) your selection of which of the 25 colors you would like to use in a given context.
 }
 \examples{
 # Extract colors from a supplied image
