@@ -2,10 +2,14 @@ Package: lterpalettefinder
 Type: Package
 Title: Identify Palettes Extracted from LTER Photos
 Version: 1.0.0
-Authors@R: c(person(given = 'Nicholas J', family = 'Lyon', role = c('aut', "cre"), comment = 'https://orcid.org/0000-0003-3905-1078', email = "njlyon@alumni.iastate.edu"))
-Author: Nicholas Lyon [aut, cre]
+Authors@R: c(
+  person("Nicholas J", "Lyon", email = "njlyon@alumni.iastate.edu", role = c("aut", "cre"), 
+    comment = 'https://orcid.org/0000-0003-3905-1078'),
+  person("Gabriel", "De La Rosa", email = "delarosa@nceas.ucsb.edu", role = "ctb")
+  )
 Maintainer: Nicholas Lyon <njlyon@alumni.iastate.edu>
 Description: Allows identification of palettes derived from LTER photographs based on user criteria.
+   Also facilitates extraction of palettes from users' photos directly.
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
