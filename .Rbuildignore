@@ -1,3 +1,6 @@
 ^.*\.Rproj$
 ^\.Rproj\.user$
 ^README\.Rmd$
+^metadata$
+^cran\-comments\.md$
+^pkg\-checking\.R$
