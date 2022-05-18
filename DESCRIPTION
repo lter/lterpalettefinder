@@ -5,7 +5,7 @@ Version: 1.0.0
 Authors@R: c(
   person("Nicholas J", "Lyon", email = "njlyon@alumni.iastate.edu", role = c("aut", "cre"), 
     comment = 'https://orcid.org/0000-0003-3905-1078'),
-  person("Gabriel", "De La Rosa", email = "delarosa@nceas.ucsb.edu", role = "ctb")
+  person("Gabe", "De La Rosa", email = "delarosa@nceas.ucsb.edu", role = "ctb")
   )
 Maintainer: Nicholas Lyon <njlyon@alumni.iastate.edu>
 Description: Allows identification of palettes derived from LTER photographs based on user criteria.
