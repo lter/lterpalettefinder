@@ -23,7 +23,8 @@
 #' # What if our query returns JUST ONE option? (this is desirable)
 #' palette_find(site = "AND")
 #' 
-palette_find <- function(site = "all", name = "all", type = "all", length = "all"){
+palette_find <- function(site = "all", name = "all",
+                         type = "all", length = "all"){
   # Retrieve data
   palette_options <- lterpalettefinder::palette_options
   
@@ -59,7 +60,7 @@ palette_find <- function(site = "all", name = "all", type = "all", length = "all
   
   if(base::nrow(palt == 1)){
     base::message("Exactly one palette identified. Output cropped to only HEX codes for ease of plotting")
-    palt_simp <- base::as.vector(dplyr::select(.data = palt, dplyr::starts_with('color')))
+    palt_simp <- base::as.character(dplyr::select(.data = palt, dplyr::starts_with('color')))
     base::colnames(palt_simp) <- NULL
     return(palt_simp)
   } } } }

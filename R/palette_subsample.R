@@ -35,7 +35,7 @@ palette_subsample <- function(palette, wanted = 5,
   base::set.seed(seed = random_seed)
   
   # Sample provided vector
-  picked <- base::sample(x = palette, size = wanted)
+  picked <- base::as.character(base::sample(x = palette, size = wanted))
   
   # Return that vector
   return(picked)
