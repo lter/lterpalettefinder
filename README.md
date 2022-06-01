@@ -25,10 +25,14 @@ devtools::install_github("lter/lterpalettefinder")
 
 ## Functions
 
-This package currently includes a few functions
+This package currently includes the following functions:
+
+### Use an Existing Palette
 
 -   **`palette_find()`** returns “official” palette(s) that we have
     already created that meet criteria you specify
+
+### Create Your Own Palette
 
 -   **`palette_extract()`** extracts 25 colors’ hexadecimal codes from a
     picture of your choosing (PNG, JPEG, TIFF, and HEIC formats are
@@ -40,13 +44,15 @@ This package currently includes a few functions
 -   **`palette_subsample()`** randomly picks a user-specified number of
     hexadecimal codes from a vector of such codes
 
--   **`palette_demo()`** creates an exploratory base R graph from a
+### Demonstrate a Palette
+
+-   **`palette_demo()`** creates an exploratory **base R** graph from a
     vector of hexadecimal codes (like that returned by either
     `palette_extract()`, `..._sort()`, or `..._subsample()`) and
     provides an option to export that plot if desired
 
--   **`palette_ggdemo()`** creates an exploratory `ggplot2` graph from a
-    vector of hexadecimal codes (like that returned by either
+-   **`palette_ggdemo()`** creates an exploratory **`ggplot2`** graph
+    from a vector of hexadecimal codes (like that returned by either
     `palette_extract()`, `..._sort()`, or `..._subsample()`)
 
 Note that the vector of hexadecimal codes provided by `palette_find()`
