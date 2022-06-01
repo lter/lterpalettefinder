@@ -42,14 +42,14 @@ palette_extract <- function(image, sort = FALSE,
   if(tools::file_ext(image) == "heic"){
     # Read HEIC
     heic_temp <- magick::image_read(path = image)
-    # Write as PNG
-    magick::image_write(image = heic_temp, format = "png",
-                        path = "temp-heic-transform.png")
-    # Read PNG version in
-    pic <- png::readPNG(source = "temp-heic-transform.png", native = FALSE) 
+    # Identify path to create temp file
+    temp_image <- base::file.path(base::tempdir(), "temp-heic-transform.png")
+    # Write as temporary PNG
+    magick::image_write(image = heic_temp, format = "png", path = temp_image)
+    # Read in that temporary file
+    pic <- png::readPNG(source = temp_image, native = FALSE) 
     # Delete the temporary file
-    base::unlink(x = "temp-heic-transform.png",
-                 recursive = FALSE, force = FALSE) }
+    base::unlink(x = temp_image, recursive = FALSE, force = FALSE) }
     
     # Extract RGB channels
     if (progress_bar == TRUE) {base::message("{==        }")} # 2
