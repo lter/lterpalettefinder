@@ -4,6 +4,8 @@
 # lterpalettefinder
 
 <!-- badges: start -->
+
+[![R-CMD-check](https://github.com/lter/lterpalettefinder/workflows/R-CMD-check/badge.svg)](https://github.com/lter/lterpalettefinder/actions)
 <!-- badges: end -->
 
 The goal of `lterpalettefinder` is to provide high quality color

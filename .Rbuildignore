@@ -4,3 +4,4 @@
 ^metadata$
 ^cran\-comments\.md$
 ^pkg\-checking\.R$
+^\.github$
