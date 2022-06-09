@@ -24,18 +24,19 @@ palette_extract <- function(image, sort = FALSE,
   rawRGB <- red <- green <- blue <- NULL
   
   # Error for unspecified file suffix
-  if(!tools::file_ext(image) %in% c("png", "jpg", "tiff", "heic") &
+  if(!tools::file_ext(image) %in% c("png", "jpg", "jpeg", "tiff", "heic") &
      nchar(tools::file_ext(image)) == 0) stop('No file suffix specified')
   
   # Error for unsupported image type(s)
-  if(!tools::file_ext(image) %in% c("png", "jpg", "tiff", "heic") &
+  if(!tools::file_ext(image) %in% c("png", "jpg", "jpeg", "tiff", "heic") &
      nchar(tools::file_ext(image)) != 0) stop('Only PNG, JPG, TIFF, and HEIC files are accepted. Please convert your image to one of these and re-run')
   
   if (progress_bar == TRUE) { base::message("{=         }") } # 1
   # Read file in with file type-appropriate function
   if(tools::file_ext(image) == "png"){
     pic <- png::readPNG(source = image, native = FALSE) }
-  if(tools::file_ext(image) == "jpg"){
+  if(tools::file_ext(image) == "jpg" |
+     tools::file_ext(image) == "jpeg"){
     pic <- jpeg::readJPEG(source = image, native = FALSE) }
   if(tools::file_ext(image) == "tiff"){
     pic <- tiff::readTIFF(source = image, native = FALSE) }
