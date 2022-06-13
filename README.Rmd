@@ -8,7 +8,7 @@ output: github_document
 knitr::opts_chunk$set(collapse = TRUE, comment = "#>", fig.path = "man/figures/README-")
 ```
 
-<img src="inst/images/lterpalettefinder_hex.jpg" align = "right" width = "15%" />
+<img src="inst/images/lterpalettefinder_hex.png" align = "right" width = "15%" />
 
 # lterpalettefinder
 

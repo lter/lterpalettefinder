@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-<img src="inst/images/lterpalettefinder_hex.jpg" align = "right" width = "15%" />
+<img src="inst/images/lterpalettefinder_hex.png" align = "right" width = "15%" />
 
 # lterpalettefinder
 
