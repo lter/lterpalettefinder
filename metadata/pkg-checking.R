@@ -27,15 +27,14 @@ devtools::document()
 # Can also manually submit via CRAN's portal:
 ## https://cran.r-project.org/submit.html
 
-
-
-
 # Getting Started -------------------------------
 ## Now unnecessary but good for next time!
 
 # Create a README for easy GitHub rendering
 # usethis::use_readme_rmd()
 
+# Adding R-CMD check badge
+# usethis::use_github_action_check_standard()
 
 # ***
 

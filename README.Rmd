@@ -16,6 +16,7 @@ knitr::opts_chunk$set(
 # lterpalettefinder
 
 <!-- badges: start -->
+[![R-CMD-check](https://github.com/lter/lterpalettefinder/workflows/R-CMD-check/badge.svg)](https://github.com/lter/lterpalettefinder/actions)
 <!-- badges: end -->
 
 The goal of `lterpalettefinder` is to provide high quality color palettes derived from photos at LTER sites. This allows users to create beautiful graphics that have close visual ties to photos from the places where data were collected. This package also allows users to generate their own palettes from any photo (PNG, JPEG, TIFF, or HEIC) if the current palettes in the function do not meet their needs.

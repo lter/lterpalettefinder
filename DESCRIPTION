@@ -24,9 +24,6 @@ Imports:
     magrittr,
     png,
     stats,
-    stringr,
     tools,
     tidyr,
-    tiff,
-    usethis,
-    utils
+    tiff

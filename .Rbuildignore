@@ -5,3 +5,4 @@
 ^cran\-comments\.md$
 ^pkg\-checking\.R$
 lterpalettefinder\_hex\.jpg
+^\.github$
