@@ -3,6 +3,8 @@
 
 # lterpalettefinder
 
+<img src="lterpalettefinder_hex.jpg" height="150" style="display: block; margin: auto 0 auto auto;" />
+
 <!-- badges: start -->
 
 [![R-CMD-check](https://github.com/lter/lterpalettefinder/workflows/R-CMD-check/badge.svg)](https://github.com/lter/lterpalettefinder/actions)
