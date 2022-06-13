@@ -1,9 +1,9 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# lterpalettefinder
+<img src="inst/images/lterpalettefinder_hex.jpg" align = "right" width = "15%" />
 
-<img src="lterpalettefinder_hex.jpg" height="150" style="display: block; margin: auto 0 auto auto;" />
+# lterpalettefinder
 
 <!-- badges: start -->
 

@@ -8,12 +8,9 @@ output: github_document
 knitr::opts_chunk$set(collapse = TRUE, comment = "#>", fig.path = "man/figures/README-")
 ```
 
+<img src="inst/images/lterpalettefinder_hex.jpg" align = "right" width = "15%" />
+
 # lterpalettefinder
-
-```{r, echo = FALSE, fig.align = 'right', out.height = 150}
-knitr::include_graphics(path = "lterpalettefinder_hex.jpg")
-```
-
 
 <!-- badges: start -->
 [![R-CMD-check](https://github.com/lter/lterpalettefinder/workflows/R-CMD-check/badge.svg)](https://github.com/lter/lterpalettefinder/actions)
