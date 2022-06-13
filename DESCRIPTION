@@ -13,7 +13,7 @@ Description: Allows identification of palettes derived from LTER photographs bas
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
-RoxygenNote: 7.1.2
+RoxygenNote: 7.2.0
 Imports: 
     dplyr,
     ggplot2,
