@@ -19,6 +19,18 @@ palette_ggdemo <- function(palette){
   # Squelch no visible bindings warning
   x <- y <- NULL
   
+  # Check if palette is a character
+  if(!is.character(palette)) {
+    stop("A character vector was expected")
+  }
+  
+  # Check if you have correct hexadecimal codes
+  if(sum(!grepl('^#[A-Fa-f0-9]{6}$', palette)) > 0){
+    if(sum(!grepl('^#[A-Fa-f0-9]{8}$', palette)) > 0){
+      stop("Some hexadecimal codes are not correctly formatted")
+    } 
+  }
+  
   # Identify number of colors
   palette_length <- base::length(palette)
   
