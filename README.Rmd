@@ -4,13 +4,14 @@ output: github_document
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-```{r, include = FALSE}
-knitr::opts_chunk$set(collapse = TRUE, comment = "#>", fig.path = "man/figures/README-")
-```
-
 <img src="inst/images/lterpalettefinder_hex.png" align = "right" width = "15%" />
 
-# lterpalettefinder
+```{r, include = FALSE}
+knitr::opts_chunk$set(collapse = TRUE, comment = "#>",
+                      fig.path = "man/figures/README-")
+```
+
+# `lterpalettefinder`
 
 <!-- badges: start -->
 [![R-CMD-check](https://github.com/lter/lterpalettefinder/workflows/R-CMD-check/badge.svg)](https://github.com/lter/lterpalettefinder/actions)

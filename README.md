@@ -3,7 +3,7 @@
 
 <img src="inst/images/lterpalettefinder_hex.png" align = "right" width = "15%" />
 
-# lterpalettefinder
+# `lterpalettefinder`
 
 <!-- badges: start -->
 
