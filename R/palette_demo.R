@@ -14,8 +14,7 @@
 #'
 #' @examples
 #' # Extract colors from a supplied image
-#' my_colors <- palette_extract(image = system.file("extdata", "lyon-fire.png",
-#' package = "lterpalettefinder"))
+#' my_colors <- palette_extract(image = system.file("extdata", "lyon-fire.png", package = "lterpalettefinder"))
 #'        
 #' # Plot that result
 #' palette_demo(palette = my_colors)
@@ -23,6 +22,19 @@
 palette_demo <- function(palette, export = FALSE,
                          export_name = "my_palette",
                          export_path = getwd()){
+  
+  # Check if palette is not a number
+  if(!is.character(palette)) {
+    stop("A character vector was expected")
+  }
+  
+  # Check if you have correct hexadecimal codes
+  if(sum(!grepl('^#[A-Fa-f0-9]{6}$', palette)) > 0){
+    if(sum(!grepl('^#[A-Fa-f0-9]{8}$', palette)) > 0){
+      stop("Some hexadecimal codes are not correctly formatted")
+    } 
+  }
+  
   
   # Reject palettes longer than 25
   if(base::length(palette) > 25) stop("More than 25 colors is unsupported by this function. Give this function no more than 25 HEX codes or use `palette_ggdemo()` which will accept any number of colors")
