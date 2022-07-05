@@ -30,8 +30,9 @@ Accepts the hexadecimal code vector returned by `palette_extract()`, `..._sort()
 }
 \examples{
 # Extract colors from a supplied image
-my_colors <- palette_extract(image = system.file("extdata", "lyon-fire.png",
-package = "lterpalettefinder"))
+my_colors <- palette_extract(
+   image = system.file("extdata", "lyon-fire.png", package = "lterpalettefinder")
+   )
        
 # Plot that result
 palette_demo(palette = my_colors)
