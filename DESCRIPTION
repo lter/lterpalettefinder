@@ -14,6 +14,8 @@ License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 7.2.0
+Depends:
+    R (>= 3.5)
 Imports: 
     dplyr,
     ggplot2,
