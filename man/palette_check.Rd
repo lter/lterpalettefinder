@@ -2,7 +2,7 @@
 % Please edit documentation in R/palette_check.R
 \name{palette_check}
 \alias{palette_check}
-\title{Check if a palette is using the correct format}
+\title{Check Hexadecimal Code Formatting}
 \usage{
 palette_check(palette)
 }
@@ -13,7 +13,7 @@ palette_check(palette)
 An error message or nothing
 }
 \description{
-Accepts the hexadecimal code vector and test if it is of the correct format
+Accepts the hexadecimal code vector and test if it is formatted correctly
 }
 \examples{
 # Check for misformatted hexcodes

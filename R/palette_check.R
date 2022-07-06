@@ -1,7 +1,6 @@
-
-#' Check if a palette is using the correct format
+#' @title Check Hexadecimal Code Formatting
 #'
-#' @description Accepts the hexadecimal code vector and test if it is of the correct format
+#' @description Accepts the hexadecimal code vector and test if it is formatted correctly
 #' 
 #' @param palette Vector of hexadecimal codes returned by `palette_extract()`, `..._sort()`, or `..._subsample()`
 #' 
@@ -16,7 +15,7 @@
 #' }
 palette_check <- function(palette){
 
-  # Check if palette is a character
+  # Check if palette is a character vector
   if(!is.character(palette)) {
     stop("A character vector was expected")
   }
