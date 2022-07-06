@@ -13,6 +13,14 @@ devtools::check()
 # Update documentation
 devtools::document()
 
+# Creating a Vignette ---------------------------
+
+# Can create the necessary components using `usethis`
+# usethis::use_vignette(name = "my_vignette")
+## 1) Creates 'vignettes/' directory
+## 2) Adds needed dependencies to DESCRIPTION (e.g., `knitr`)
+## 3) Drafts a vignette: "vignettes/{name}.Rmd"
+
 # Releasing to CRAN -----------------------------
 
 # CRAN Repository Policy here:

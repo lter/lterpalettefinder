@@ -29,3 +29,7 @@ Imports:
     tools,
     tidyr,
     tiff
+Suggests: 
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr
