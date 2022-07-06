@@ -1,7 +1,9 @@
 #' @title Demonstrate Extracted Palette with HEX Labels - Base Plot Edition
 #' 
-#' @description Accepts the hexadecimal code vector returned by `palette_extract()`, `..._sort()`, or `..._subsample()` and creates a base plot of all returned colors labeled with their HEX codes. This will facilitate (hopefully) your selection of which of the 25 colors you would like to use in a given context.
-#' 
+#' @description Accepts the hexadecimal code vector returned by `palette_extract()`, `..._sort()`, or `..._subsample()` and 
+#'    creates a base plot of all returned colors labeled with their HEX codes. This will facilitate (hopefully) your selection of 
+#'    which of the 25 colors you would like to use in a given context.
+#'    
 #' @param palette Vector of hexadecimal codes like that returned by `palette_extract()`, `..._sort()`, or `..._subsample()`
 #' @param export Logical of whether or not to export the demo plot
 #' @param export_name Character string of what to name exported plot
@@ -12,8 +14,9 @@
 #'
 #' @examples
 #' # Extract colors from a supplied image
-#' my_colors <- palette_extract(image = system.file("extdata", "lyon-fire.png",
-#' package = "lterpalettefinder"))
+#' my_colors <- palette_extract(
+#'    image = system.file("extdata", "lyon-fire.png", package = "lterpalettefinder")
+#'    )
 #'        
 #' # Plot that result
 #' palette_demo(palette = my_colors)
@@ -21,6 +24,9 @@
 palette_demo <- function(palette, export = FALSE,
                          export_name = "my_palette",
                          export_path = getwd()){
+  
+  # Check if palette is using the correct format
+  palette_check(palette)
   
   # Reject palettes longer than 25
   if(base::length(palette) > 25) stop("More than 25 colors is unsupported by this function. Give this function no more than 25 HEX codes or use `palette_ggdemo()` which will accept any number of colors")

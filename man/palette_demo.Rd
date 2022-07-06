@@ -24,12 +24,15 @@ palette_demo(
 A plot of the retrieved colors labeled with their HEX codes
 }
 \description{
-Accepts the hexadecimal code vector returned by `palette_extract()`, `..._sort()`, or `..._subsample()` and creates a base plot of all returned colors labeled with their HEX codes. This will facilitate (hopefully) your selection of which of the 25 colors you would like to use in a given context.
+Accepts the hexadecimal code vector returned by `palette_extract()`, `..._sort()`, or `..._subsample()` and 
+   creates a base plot of all returned colors labeled with their HEX codes. This will facilitate (hopefully) your selection of 
+   which of the 25 colors you would like to use in a given context.
 }
 \examples{
 # Extract colors from a supplied image
-my_colors <- palette_extract(image = system.file("extdata", "lyon-fire.png",
-package = "lterpalettefinder"))
+my_colors <- palette_extract(
+   image = system.file("extdata", "lyon-fire.png", package = "lterpalettefinder")
+   )
        
 # Plot that result
 palette_demo(palette = my_colors)

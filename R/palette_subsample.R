@@ -28,6 +28,9 @@
 palette_subsample <- function(palette, wanted = 5,
                               random_seed = 36){
   
+  # Check if palette is using the correct format
+  palette_check(palette)
+  
   # If more are specified than there are elements of vector, error out
   if(wanted > base::length(palette)) stop('More colors requested than are found in original vector. Re-sampling is not supported')
   

@@ -19,6 +19,9 @@ palette_ggdemo <- function(palette){
   # Squelch no visible bindings warning
   x <- y <- NULL
   
+  # Check if palette is using the correct format
+  palette_check(palette)
+  
   # Identify number of colors
   palette_length <- base::length(palette)
   
