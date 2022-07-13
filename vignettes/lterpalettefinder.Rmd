@@ -11,6 +11,10 @@ vignette: >
 knitr::opts_chunk$set(collapse = TRUE, comment = "#>")
 ```
 
+```{r pre-setup, echo = FALSE, message = FALSE}
+devtools::install_github("lter/lterpalettefinder")
+```
+
 ### Overview
 
 The `lterpalettefinder` package (LTER + Palette + Finder) was initially developed simply to house hexadecimal code color palettes manually extracted from photos taken at Long Term Ecological Research sites. During its development its purpose expanded to include a set of tools for automatically extracting those colors and visualizing the derived palettes.
