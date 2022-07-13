@@ -12,7 +12,7 @@ knitr::opts_chunk$set(collapse = TRUE, comment = "#>")
 ```
 
 ```{r pre-setup, echo = FALSE, message = FALSE}
-devtools::install_github("lter/lterpalettefinder")
+# devtools::install_github("lter/lterpalettefinder")
 ```
 
 ### Overview
