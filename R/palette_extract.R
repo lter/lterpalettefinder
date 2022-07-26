@@ -103,7 +103,7 @@ palette_extract <- function(image, sort = FALSE,
     hexes <- base::data.frame(hex_code = base::unique(hex_vec))
     
     # Make it a vector
-    hex_vec <- hexes$hex_code
+    hex_vec <- base::as.character(hexes$hex_code)
     
     # If sorting is not requested, return unsorted vec
     if(sort == FALSE){ 

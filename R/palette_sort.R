@@ -97,6 +97,10 @@ palette_sort <- function(palette){
   # Get only hex_code
   hex_out <- dplyr::select(.data = rgb_v7, hex_code)
   
-  # Return as vector
-  hex_vec <- hex_out$hex_code
+  # Make a character vector
+  hex_vec <- base::as.character(hex_out$hex_code)
+  
+  # Return it
+  return(hex_vec)
+  
   }
