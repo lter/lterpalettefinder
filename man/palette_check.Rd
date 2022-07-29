@@ -7,13 +7,13 @@
 palette_check(palette)
 }
 \arguments{
-\item{palette}{Vector of hexadecimal codes returned by `palette_extract()`, `..._sort()`, or `..._subsample()`}
+\item{palette}{(character) Vector of hexadecimal codes returned by `palette_extract()`, `..._sort()`, or `..._subsample()`}
 }
 \value{
 An error message or nothing
 }
 \description{
-Accepts the hexadecimal code vector and test if it is formatted correctly
+Accepts the hexadecimal code vector and tests if it is formatted correctly
 }
 \examples{
 # Check for misformatted hexcodes
