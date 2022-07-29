@@ -27,6 +27,8 @@ You can install the development version of `lterpalettefinder` from
 devtools::install_github("lter/lterpalettefinder")
 ```
 
+If you are not an R user, you can use [this R Shiny app](https://cosima.nceas.ucsb.edu/lterpalettefinder-shiny/) to explore the core functions of `lterpalettefinder` without needing to "speak" R. The code for the app can be found [here](https://github.com/lter/lterpalettefinder-shiny#readme) if that is of interest!
+
 ## Functions
 
 This package currently includes the following functions:
