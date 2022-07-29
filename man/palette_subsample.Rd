@@ -7,14 +7,14 @@
 palette_subsample(palette, wanted = 5, random_seed = 36)
 }
 \arguments{
-\item{palette}{Vector of hexadecimal codes like those returned by `palette_extract()` or `palette_sort()`}
+\item{palette}{(character) Vector of hexadecimal codes like those returned by `palette_extract()` or `palette_sort()`}
 
-\item{wanted}{Integer for how many colors should be returned}
+\item{wanted}{(numeric) Integer for how many colors should be returned}
 
-\item{random_seed}{Integer for `base::set.seed()`}
+\item{random_seed}{(numeric) Integer for `base::set.seed()`}
 }
 \value{
-Vector of HEX codes of user-specified length
+(character) Vector of hexadecimal codes of user-specified length
 }
 \description{
 Randomly subsample the HEX codes returned by `palette_extract()` or `palette_sort()` to desired length. Can also set random seed for reproducibility.

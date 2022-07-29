@@ -2,11 +2,11 @@
 #' 
 #' @description Randomly subsample the HEX codes returned by `palette_extract()` or `palette_sort()` to desired length. Can also set random seed for reproducibility.
 #' 
-#' @param palette Vector of hexadecimal codes like those returned by `palette_extract()` or `palette_sort()`
-#' @param wanted Integer for how many colors should be returned
-#' @param random_seed Integer for `base::set.seed()`
+#' @param palette (character) Vector of hexadecimal codes like those returned by `palette_extract()` or `palette_sort()`
+#' @param wanted (numeric) Integer for how many colors should be returned
+#' @param random_seed (numeric) Integer for `base::set.seed()`
 #' 
-#' @return Vector of HEX codes of user-specified length
+#' @return (character) Vector of hexadecimal codes of user-specified length
 #' 
 #' @export
 #'
@@ -30,6 +30,14 @@ palette_subsample <- function(palette, wanted = 5,
   
   # Check if palette is using the correct format
   palette_check(palette)
+  
+  # Error out if wanted is not coercible to numeric
+  if(!is.numeric(wanted) & is.na(suppressWarnings(as.numeric(wanted))))
+    stop("`wanted` must be numeric or coercible to numeric")
+  
+  # Error out if random_seed is not coercible to numeric
+  if(!is.numeric(random_seed) & is.na(suppressWarnings(as.numeric(random_seed))))
+    stop("`random_seed` must be numeric or coercible to numeric")
   
   # If more are specified than there are elements of vector, error out
   if(wanted > base::length(palette)) stop('More colors requested than are found in original vector. Re-sampling is not supported')
