@@ -4,12 +4,13 @@
 #'    creates a base plot of all returned colors labeled with their HEX codes. This will facilitate (hopefully) your selection of 
 #'    which of the 25 colors you would like to use in a given context.
 #'    
-#' @param palette Vector of hexadecimal codes like that returned by `palette_extract()`, `..._sort()`, or `..._subsample()`
-#' @param export Logical of whether or not to export the demo plot
-#' @param export_name Character string of what to name exported plot
-#' @param export_path File path to save exported plot (defaults to working directory)
+#' @param palette (character) Vector of hexadecimal codes like that returned by `palette_extract()`, `..._sort()`, or `..._subsample()`
+#' @param export (logical) Whether or not to export the demo plot
+#' @param export_name (character) Name for exported plot
+#' @param export_path (character) File path to save exported plot (defaults to working directory)
 #' 
 #' @return A plot of the retrieved colors labeled with their HEX codes
+#' 
 #' @export
 #'
 #' @examples

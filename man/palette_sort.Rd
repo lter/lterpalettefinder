@@ -7,10 +7,10 @@
 palette_sort(palette)
 }
 \arguments{
-\item{palette}{Vector returned by `palette_extract()`}
+\item{palette}{(character) Vector returned by `palette_extract()`}
 }
 \value{
-Vector containing all hexadecimal codes returned by `palette_extract()`
+(character) Vector containing all hexadecimal codes returned by `palette_extract()`
 }
 \description{
 Sorts hexademical codes retrieved by `palette_extract()`  by hue and saturation. This allows for reasonably good identification of 'similar' colors in the way that a human eye would perceive them (as opposed to a computer's representation of colors).

@@ -2,11 +2,12 @@
 #' 
 #' @description Retrieves hexadecimal codes for the colors in an image file. Currently only PNG, JPEG, TIFF, and HEIC files are supported. The function automatically removes dark colors and removes 'similar' colors to yield 25 colors from which you can select the subset that works best for your visualization needs. Note that photos that are very dark may return few viable colors.
 #' 
-#' @param image Name/path to PNG, JPEG, TIFF, or HEIC file from which to extract colors
-#' @param sort Logical (TRUE / FALSE) indicating whether extracted HEX codes should be sorted by hue and saturation
-#' @param progress_bar Logical (TRUE / FALSE) indicating whether a progress bar is desired
+#' @param image (character) Name/path to PNG, JPEG, TIFF, or HEIC file from which to extract colors
+#' @param sort (logical) Whether extracted HEX codes should be sorted by hue and saturation
+#' @param progress_bar (logical) Whether to `message` a progress bar
 #' 
-#' @return Vector containing all hexadecimal codes remaining after extraction and removal of 'dark' and 'similar' colors.
+#' @return (character) Vector containing all hexadecimal codes remaining after extraction and removal of 'dark' and 'similar' colors
+#' 
 #' @importFrom magrittr %>%
 #' @export
 #'

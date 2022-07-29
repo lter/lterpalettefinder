@@ -7,16 +7,16 @@
 palette_find(site = "all", name = "all", type = "all", length = "all")
 }
 \arguments{
-\item{site}{Vector of three-letter LTER site abbreviations for which to return palettes}
+\item{site}{(character) Vector of three-letter LTER site abbreviations for which to return palettes or "all" or "LTER" for the LTER logo colors}
 
-\item{name}{Vector of palette names (if known) for which to return palettes}
+\item{name}{(character) Vector of palette names (if known) for which to return palettes}
 
-\item{type}{Vector of palette types (e.g., qualitative, sequential, etc.) for which to return palettes}
+\item{type}{(character) Vector of palette types (i.e., qualitative, sequential, or diverging) for which to return palettes}
 
-\item{length}{Vector of acceptable palette lengths (i.e., how many colors are needed)}
+\item{length}{(character / numeric) Vector of acceptable palette lengths (i.e., how many colors are needed). Must be "all" or coercible to numeric}
 }
 \value{
-If more than one palette is a dataframe, if exactly one palette is a vector
+(dataframe / character) If more than one palette, a dataframe is returned; if exactly one palette, a character vector is returned
 }
 \description{
 From a dataframe of all possible palettes (updated periodically so check back!) specify the characteristics of the palette you want and retrieve the palettes that match those criteria. Can specify by number of colors in the palette, type of palette (e.g., qualitative, sequential, etc.), or which LTER site the palette came from.

@@ -7,7 +7,7 @@
 palette_ggdemo(palette)
 }
 \arguments{
-\item{palette}{Vector of hexadecimal codes returned by `palette_extract()`, `..._sort()`, or `..._subsample()`}
+\item{palette}{(character) Vector of hexadecimal codes returned by `palette_extract()`, `..._sort()`, or `..._subsample()`}
 }
 \value{
 A ggplot2 plot

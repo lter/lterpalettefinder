@@ -2,12 +2,13 @@
 #' 
 #' @description From a dataframe of all possible palettes (updated periodically so check back!) specify the characteristics of the palette you want and retrieve the palettes that match those criteria. Can specify by number of colors in the palette, type of palette (e.g., qualitative, sequential, etc.), or which LTER site the palette came from.
 #' 
-#' @param site Vector of three-letter LTER site abbreviations for which to return palettes
-#' @param name Vector of palette names (if known) for which to return palettes
-#' @param type Vector of palette types (e.g., qualitative, sequential, etc.) for which to return palettes
-#' @param length Vector of acceptable palette lengths (i.e., how many colors are needed)
+#' @param site (character) Vector of three-letter LTER site abbreviations for which to return palettes or "all" or "LTER" for the LTER logo colors
+#' @param name (character) Vector of palette names (if known) for which to return palettes
+#' @param type (character) Vector of palette types (i.e., qualitative, sequential, or diverging) for which to return palettes
+#' @param length (character / numeric) Vector of acceptable palette lengths (i.e., how many colors are needed). Must be "all" or coercible to numeric
 #' 
-#' @return If more than one palette is a dataframe, if exactly one palette is a vector 
+#' @return (dataframe / character) If more than one palette, a dataframe is returned; if exactly one palette, a character vector is returned
+#' 
 #' @export
 #'
 #' @examples

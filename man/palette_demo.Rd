@@ -12,13 +12,13 @@ palette_demo(
 )
 }
 \arguments{
-\item{palette}{Vector of hexadecimal codes like that returned by `palette_extract()`, `..._sort()`, or `..._subsample()`}
+\item{palette}{(character) Vector of hexadecimal codes like that returned by `palette_extract()`, `..._sort()`, or `..._subsample()`}
 
-\item{export}{Logical of whether or not to export the demo plot}
+\item{export}{(logical) Whether or not to export the demo plot}
 
-\item{export_name}{Character string of what to name exported plot}
+\item{export_name}{(character) Name for exported plot}
 
-\item{export_path}{File path to save exported plot (defaults to working directory)}
+\item{export_path}{(character) File path to save exported plot (defaults to working directory)}
 }
 \value{
 A plot of the retrieved colors labeled with their HEX codes
