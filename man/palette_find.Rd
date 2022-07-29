@@ -29,9 +29,9 @@ lterpalettefinder::palette_find()
 palette_find(length = 1)
 
 # What if our query returns MULTIPLE options?
-palette_find(length = 5, site = "HBR")
+palette_find(length = 10, site = "hbr")
 
 # What if our query returns JUST ONE option? (this is desirable)
-palette_find(site = "AND")
+palette_find(name = "salamander")
 
 }
