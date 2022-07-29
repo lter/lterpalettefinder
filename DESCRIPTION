@@ -10,7 +10,7 @@ Authors@R: c(
 Maintainer: Nicholas Lyon <njlyon@alumni.iastate.edu>
 Description: Allows identification of palettes derived from LTER photographs based on user criteria.
    Also facilitates extraction of palettes from users' photos directly.
-License: MIT + file LICENSE
+License: Apache License (== 2.0)
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 7.2.0
