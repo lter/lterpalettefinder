@@ -35,6 +35,9 @@ devtools::document()
 # Can also manually submit via CRAN's portal:
 ## https://cran.r-project.org/submit.html
 
+# If the submission fails, check out Wickham's advice on what to do
+## https://r-pkgs.org/release.html#on-failure
+
 # Getting Started -------------------------------
 ## Now unnecessary but good for next time!
 
