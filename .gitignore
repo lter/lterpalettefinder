@@ -46,3 +46,6 @@ vignettes/*.pdf
 
 # Open source form UCSB requires to have certain licenses
 metadata/UCSB_open-source-form.pdf
+
+# Extracted palettes from official photos
+update-palette-options/official palettes/
