@@ -82,7 +82,7 @@ palette_ggdemo(palette = fire_sub)
 The original impetus for `lterpalettefinder` was to allow users to select pre-set palettes and while the package has evolved beyond that, `palette_find` does serve this purpose. `palette_find` allows users to specify the site, number of colors, type of palette (e.g., sequential, diverging, etc.), and--if known--the name of the palette to identify and return an official palette.
 
 ```{r palette_find}
-official_palette <- palette_find(site = "AND", length = 10)
+official_palette <- palette_find(name = "hike")
 palette_ggdemo(palette = official_palette)
 ```
 
