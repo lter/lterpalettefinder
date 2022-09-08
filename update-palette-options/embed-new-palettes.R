@@ -139,7 +139,7 @@ palette_actual <- palette_df %>%
     palette_full_name %in% c("HBR-canopy", "HBR-lotus",
                              "HBR-mushroom floor") ~ "Ashley Lang",
     palette_full_name == "HBR-mushroom tree" ~ "Jackie Matthes",
-    palette_full_name == "HBR-winter tree" ~ "LTER Network Office",
+    palette_full_name == "HBR-winter tree" ~ "Lindsey Rustad",
     # Jornada Basin (JRN)
     palette_full_name == "JRN-calf" ~ "Dylan Stover",
     palette_full_name %in% c("JRN-monsoon", "JRN-oryx", "JRN-rainbow",
@@ -147,7 +147,7 @@ palette_actual <- palette_df %>%
     palette_full_name == "JRN-pronghorn" ~ "Brandon Bestelmeyer",
     # Kellogg Biological Station
     palette_full_name == "KBS-birds" ~ "Michaela Rose",
-    palette_full_name == "KBS-burn" ~ "LTER Network Office",
+    palette_full_name == "KBS-burn" ~ "G.P. Robertson",
     palette_full_name == "KBS-morning" ~ "Kara Dobson",
     palette_full_name %in% c("KBS-fire", "KBS-storm") ~ "Yahn-Jauh Su",
     palette_full_name == "KBS-swallowtail" ~ "Corinn Rutkoski",
@@ -159,7 +159,7 @@ palette_actual <- palette_df %>%
     # Northern Gulf of Alaska (NGA)
     palette_full_name == "NGA-boat" ~ "Emily Stidham",
     # North Temperate Lakes (NTL)
-    palette_full_name == "NTL-lakes" ~ "LTER Network Office",
+    palette_full_name == "NTL-lakes" ~ "Carl Bowser",
     # Niwot Ridge (NWT)
     palette_full_name %in% c("NWT-mountain dawn", "NWT-mountain field", "NWT-mountain flowers", "NWT-snowy mountain", "NWT-snowy trees", "NWT-wildflowers") ~ "Chiara Forester",
     # Palmer Station (PAL)
@@ -167,7 +167,7 @@ palette_actual <- palette_df %>%
                              "PAL-squid") ~ "Andrew Corso",
     # Santa Barbara Coastal (SBC)
     palette_full_name == "SBC-kelp tag" ~ "Kyle Emery",
-    palette_full_name == "SBC-kelp forest" ~ "LTER Network Office",
+    palette_full_name == "SBC-kelp forest" ~ "SBC LTER",
     # Virginia Coast (VCR)
     palette_full_name == "VCR-boat" ~ "Amelie Berger",
     palette_full_name == "VCR-marsh" ~ "Sophia Hoffman",
