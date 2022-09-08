@@ -4,16 +4,14 @@
 \alias{palette_find}
 \title{Find an LTER Palette}
 \usage{
-palette_find(site = "all", name = "all", type = "all", length = "all")
+palette_find(site = "all", name = "all", type = "all")
 }
 \arguments{
 \item{site}{(character) Vector of three-letter LTER site abbreviations for which to return palettes or "all" or "LTER" for the LTER logo colors}
 
 \item{name}{(character) Vector of palette names (if known) for which to return palettes}
 
-\item{type}{(character) Vector of palette types (i.e., qualitative, sequential, or diverging) for which to return palettes}
-
-\item{length}{(character / numeric) Vector of acceptable palette lengths (i.e., how many colors are needed). Must be "all" or coercible to numeric}
+\item{type}{(character) Vector of palette types (i.e., qualitative, tricolor, sequential, or diverging) for which to return palettes}
 }
 \value{
 (dataframe / character) If more than one palette, a dataframe is returned; if exactly one palette, a character vector is returned
@@ -26,10 +24,10 @@ From a dataframe of all possible palettes (updated periodically so check back!) 
 lterpalettefinder::palette_find()
 
 # What if our query returns NO options?
-palette_find(length = 1)
+palette_find(name = "no such name")
 
 # What if our query returns MULTIPLE options?
-palette_find(length = 10, site = "hbr")
+palette_find(site = "sbc")
 
 # What if our query returns JUST ONE option? (this is desirable)
 palette_find(name = "salamander")
