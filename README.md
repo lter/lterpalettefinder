@@ -27,43 +27,41 @@ You can install the development version of `lterpalettefinder` from
 devtools::install_github("lter/lterpalettefinder")
 ```
 
-If you are not an R user, you can use [this R Shiny app](https://cosima.nceas.ucsb.edu/lterpalettefinder-shiny/) to explore the core functions of `lterpalettefinder` without needing to "speak" R. The code for the app can be found [here](https://github.com/lter/lterpalettefinder-shiny#readme) if that is of interest!
-
 ## Functions
 
 This package currently includes the following functions:
 
 ### Use an Existing Palette
 
--   **`palette_find()`** returns “official” palette(s) that we have
+-   **`palette_find`** returns “official” palette(s) that we have
     already created that meet criteria you specify
 
 ### Create Your Own Palette
 
--   **`palette_extract()`** extracts 25 colors’ hexadecimal codes from a
+-   **`palette_extract`** extracts 25 colors’ hexadecimal codes from a
     picture of your choosing (PNG, JPEG, TIFF, and HEIC formats are
     currently supported)
 
--   **`palette_sort()`** sorts output of `palette_extract()` by hue and
+-   **`palette_sort`** sorts output of `palette_extract` by hue and
     saturation to approximate how human eyes group colors
 
--   **`palette_subsample()`** randomly picks a user-specified number of
+-   **`palette_subsample`** randomly picks a user-specified number of
     hexadecimal codes from a vector of such codes
 
 ### Demonstrate a Palette
 
--   **`palette_demo()`** creates an exploratory **base R** graph from a
+-   **`palette_demo`** creates an exploratory **base R** graph from a
     vector of hexadecimal codes (like that returned by either
-    `palette_extract()`, `..._sort()`, or `..._subsample()`) and
-    provides an option to export that plot if desired
+    `palette_extract`, `..._sort`, or `..._subsample`) and provides an
+    option to export that plot if desired
 
--   **`palette_ggdemo()`** creates an exploratory **`ggplot2`** graph
-    from a vector of hexadecimal codes (like that returned by either
-    `palette_extract()`, `..._sort()`, or `..._subsample()`)
+-   **`palette_ggdemo`** creates an exploratory **`ggplot2`** graph from
+    a vector of hexadecimal codes (like that returned by either
+    `palette_extract`, `..._sort`, or `..._subsample`)
 
-Note that the vector of hexadecimal codes provided by `palette_find()`
+Note that the vector of hexadecimal codes provided by `palette_find`
 when *only one* official palette meets criteria set by user will also be
-accepted by either `palette_demo()` or `...ggdemo()`
+accepted by either `palette_demo` or `...ggdemo`
 
 ## Palette Examples
 
