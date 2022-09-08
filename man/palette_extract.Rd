@@ -22,7 +22,7 @@ Retrieves hexadecimal codes for the colors in an image file. Currently only PNG,
 \examples{
 # Extract colors from a supplied image
 my_colors <- palette_extract(image = system.file("extdata", "lyon-fire.png",
-package = "lterpalettefinder"))
+package = "lterpalettefinder"), sort = TRUE, progress_bar = FALSE)
        
 # Plot that result
 palette_demo(palette = my_colors)

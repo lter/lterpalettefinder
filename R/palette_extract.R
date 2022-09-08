@@ -14,7 +14,7 @@
 #' @examples
 #' # Extract colors from a supplied image
 #' my_colors <- palette_extract(image = system.file("extdata", "lyon-fire.png",
-#' package = "lterpalettefinder"))
+#' package = "lterpalettefinder"), sort = TRUE, progress_bar = FALSE)
 #'        
 #' # Plot that result
 #' palette_demo(palette = my_colors)
@@ -100,7 +100,6 @@ palette_extract <- function(image, sort = FALSE,
                             base::as.character(hexB))
     
     # Return only unique values to the user
-    if (progress_bar == TRUE) {base::message("{==========}")} # 10
     hexes <- base::data.frame(hex_code = base::unique(hex_vec))
     
     # Make it a vector
@@ -112,8 +111,11 @@ palette_extract <- function(image, sort = FALSE,
       } else { 
       
     # Otherwise sort the output colors
-      base::message("Sorting colors")
+        if (progress_bar == TRUE) {base::message("Sorting colors")}
       hex_sort <- lterpalettefinder::palette_sort(palette = hex_vec)
       return(hex_sort)
       }
+    
+    # Complete progress bar
+    if (progress_bar == TRUE) {base::message("{==========}")} # 10
     }
