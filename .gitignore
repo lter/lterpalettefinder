@@ -38,10 +38,11 @@ vignettes/*.pdf
 # R Environment Variables
 .Renviron
 
-# Add .DS_Store
+# .DS_Store
 .DS_Store
 
-# Add R project file
+# R project file
 *.Rproj
 
-inst/doc
+# Open source form UCSB requires to have certain licenses
+metadata/UCSB_open-source-form.pdf
