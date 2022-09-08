@@ -1,13 +1,14 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-<img src="inst/images/lterpalettefinder_hex.png" align = "right" width = "15%" />
+<img src="inst/images/lterpalettefinder_hex.png" align="right" width="15%"/>
 
 # `lterpalettefinder`
 
 <!-- badges: start -->
 
 [![R-CMD-check](https://github.com/lter/lterpalettefinder/workflows/R-CMD-check/badge.svg)](https://github.com/lter/lterpalettefinder/actions)
+
 <!-- badges: end -->
 
 The goal of `lterpalettefinder` is to provide high quality color
@@ -67,27 +68,26 @@ accepted by either `palette_demo` or `...ggdemo`
 
 These palette examples were generated from photos at LTER sites.
 
-#### [Santa Barbara Coastal LTER](https://sbclter.msi.ucsb.edu/)
+#### [Santa Barbara Coastal LTER](https://sbclter.msi.ucsb.edu/) + `palette_demo`
 
-![Photo credit: SBC
-LTER](https://lternet.edu/wp-content/uploads/2022/05/sbc.png)
+<img src="update-palette-options/official photos/SBC-kelp forest.jpeg" alt="Photo credit: SBC LTER" />
 
-#### [North Temperate Lakes LTER](https://lter.limnology.wisc.edu/)
+![](man/figures/README-sbc-extract-1.png)<!-- -->
 
-![Photo credit: Carl
-Bowser](https://lternet.edu/wp-content/uploads/2022/05/ntl.png)
+#### [North Temperate Lakes LTER](https://lter.limnology.wisc.edu/) + `palette_ggdemo`
 
-#### [Kellogg Biological Station LTER](https://lter.kbs.msu.edu/)
+<img src="update-palette-options/official photos/NTL-lakes.jpeg" alt="Photo credit: Carl Bowser" />
 
-![Photo credit: G.P. Robertson, Michigan State
-University](https://lternet.edu/wp-content/uploads/2022/05/kbs.png)
+![](man/figures/README-ntl-extract-1.png)<!-- -->
 
-#### [Jornada Basin LTER](https://lter.jornada.nmsu.edu/)
+#### [Kellogg Biological Station LTER](https://lter.kbs.msu.edu/) + `palette_demo`
 
-![Photo credit: Brandon
-Bestelmeyer](https://lternet.edu/wp-content/uploads/2022/05/jrn.png)
+<img src="update-palette-options/official photos/KBS-burn.jpeg" alt="Photo credit: G.P. Robertson" />
 
-### [Hubbard Brook LTER](https://hubbardbrook.org/hubbard-brook-long-term-ecological-research-program)
+![](man/figures/README-kbs-extract-1.png)<!-- -->
 
-![Photo credit: Lindsey
-Rustad](https://lternet.edu/wp-content/uploads/2022/05/hbr.png)
+#### [Arctic LTER](https://arc-lter.ecosystems.mbl.edu/) + `palette_ggdemo`
+
+<img src="update-palette-options/official photos/ARC-sunrise.jpeg" alt="Photo credit: Lindsay VanFossen" />
+
+![](man/figures/README-arc-extract-1.png)<!-- -->

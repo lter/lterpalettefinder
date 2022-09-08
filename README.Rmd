@@ -4,7 +4,7 @@ output: github_document
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-<img src="inst/images/lterpalettefinder_hex.png" align = "right" width = "15%" />
+<img src="inst/images/lterpalettefinder_hex.png" align="right" width="15%"/>
 
 ```{r, include = FALSE}
 knitr::opts_chunk$set(collapse = TRUE, comment = "#>",
@@ -14,7 +14,9 @@ knitr::opts_chunk$set(collapse = TRUE, comment = "#>",
 # `lterpalettefinder`
 
 <!-- badges: start -->
+
 [![R-CMD-check](https://github.com/lter/lterpalettefinder/workflows/R-CMD-check/badge.svg)](https://github.com/lter/lterpalettefinder/actions)
+
 <!-- badges: end -->
 
 The goal of `lterpalettefinder` is to provide high quality color palettes derived from photos at LTER sites. This allows users to create beautiful graphics that have close visual ties to photos from the places where data were collected. This package also allows users to generate their own palettes from any photo (PNG, JPEG, TIFF, or HEIC) if the current palettes in the function do not meet their needs.
@@ -34,21 +36,21 @@ This package currently includes the following functions:
 
 ### Use an Existing Palette
 
-- **`palette_find`** returns "official" palette(s) that we have already created that meet criteria you specify
+-   **`palette_find`** returns "official" palette(s) that we have already created that meet criteria you specify
 
 ### Create Your Own Palette
 
-- **`palette_extract`** extracts 25 colors' hexadecimal codes from a picture of your choosing (PNG, JPEG, TIFF, and HEIC formats are currently supported)
+-   **`palette_extract`** extracts 25 colors' hexadecimal codes from a picture of your choosing (PNG, JPEG, TIFF, and HEIC formats are currently supported)
 
-- **`palette_sort`** sorts output of `palette_extract` by hue and saturation to approximate how human eyes group colors
+-   **`palette_sort`** sorts output of `palette_extract` by hue and saturation to approximate how human eyes group colors
 
-- **`palette_subsample`** randomly picks a user-specified number of hexadecimal codes from a vector of such codes
+-   **`palette_subsample`** randomly picks a user-specified number of hexadecimal codes from a vector of such codes
 
 ### Demonstrate a Palette
 
-- **`palette_demo`** creates an exploratory **base R** graph from a vector of hexadecimal codes (like that returned by either `palette_extract`, `..._sort`, or `..._subsample`) and provides an option to export that plot if desired
+-   **`palette_demo`** creates an exploratory **base R** graph from a vector of hexadecimal codes (like that returned by either `palette_extract`, `..._sort`, or `..._subsample`) and provides an option to export that plot if desired
 
-- **`palette_ggdemo`** creates an exploratory **`ggplot2`** graph from a vector of hexadecimal codes (like that returned by either `palette_extract`, `..._sort`, or `..._subsample`)
+-   **`palette_ggdemo`** creates an exploratory **`ggplot2`** graph from a vector of hexadecimal codes (like that returned by either `palette_extract`, `..._sort`, or `..._subsample`)
 
 Note that the vector of hexadecimal codes provided by `palette_find` when *only one* official palette meets criteria set by user will also be accepted by either `palette_demo` or `...ggdemo`
 
@@ -56,22 +58,43 @@ Note that the vector of hexadecimal codes provided by `palette_find` when *only 
 
 These palette examples were generated from photos at LTER sites.
 
-#### [Santa Barbara Coastal LTER](https://sbclter.msi.ucsb.edu/)
+```{r library, include = F}
+devtools::install_github("lter/lterpalettefinder")
+library(lterpalettefinder)
+```
 
-![Photo credit: SBC LTER](https://lternet.edu/wp-content/uploads/2022/05/sbc.png)
+#### [Santa Barbara Coastal LTER](https://sbclter.msi.ucsb.edu/) + `palette_demo`
 
-#### [North Temperate Lakes LTER](https://lter.limnology.wisc.edu/)
+<img src="update-palette-options/official photos/SBC-kelp forest.jpeg" alt="Photo credit: SBC LTER" />
 
-![Photo credit: Carl Bowser](https://lternet.edu/wp-content/uploads/2022/05/ntl.png)
+```{r sbc-extract, message = F, echo = F}
+sbc_colors <- palette_extract(image = file.path("update-palette-options", "official photos", "SBC-kelp forest.jpeg"), sort = TRUE)
+palette_demo(palette = sbc_colors)
+```
 
-#### [Kellogg Biological Station LTER](https://lter.kbs.msu.edu/)
+#### [North Temperate Lakes LTER](https://lter.limnology.wisc.edu/) + `palette_ggdemo`
 
-![Photo credit: G.P. Robertson, Michigan State University](https://lternet.edu/wp-content/uploads/2022/05/kbs.png)
+<img src="update-palette-options/official photos/NTL-lakes.jpeg" alt="Photo credit: Carl Bowser" />
 
-#### [Jornada Basin LTER](https://lter.jornada.nmsu.edu/)
+```{r ntl-extract, message = F, echo = F}
+ntl_colors <- palette_extract(image = file.path("update-palette-options", "official photos", "NTL-lakes.jpeg"), sort = TRUE)
+palette_ggdemo(palette = ntl_colors)
+```
 
-![Photo credit: Brandon Bestelmeyer](https://lternet.edu/wp-content/uploads/2022/05/jrn.png)
+#### [Kellogg Biological Station LTER](https://lter.kbs.msu.edu/) + `palette_demo`
 
-### [Hubbard Brook LTER](https://hubbardbrook.org/hubbard-brook-long-term-ecological-research-program)
+<img src="update-palette-options/official photos/KBS-burn.jpeg" alt="Photo credit: G.P. Robertson" />
 
-![Photo credit: Lindsey Rustad](https://lternet.edu/wp-content/uploads/2022/05/hbr.png)
+```{r kbs-extract, message = F, echo = F}
+kbs_colors <- palette_extract(image = file.path("update-palette-options", "official photos", "KBS-burn.jpeg"), sort = TRUE)
+palette_demo(palette = kbs_colors)
+```
+
+#### [Arctic LTER](https://arc-lter.ecosystems.mbl.edu/) + `palette_ggdemo`
+
+<img src="update-palette-options/official photos/ARC-sunrise.jpeg" alt="Photo credit: Lindsay VanFossen" />
+
+```{r arc-extract, message = F, echo = F}
+arc_colors <- palette_extract(image = file.path("update-palette-options", "official photos", "ARC-sunrise.jpeg"), sort = TRUE)
+palette_ggdemo(palette = arc_colors)
+```
