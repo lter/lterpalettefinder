@@ -244,6 +244,13 @@ save(palette_options, file = file.path("data", "palette_options.rda"))
 # Clear environment
 rm(list = ls())
 
+## --------------------------------------------- ##
+     # Check Palette Counts / Site & Type ----
+## --------------------------------------------- ##
+
+# Clear environment
+rm(list = ls())
+
 # Load the `palette_options` file to make sure that worked
 load(file.path("data", "palette_options.rda"))
 
@@ -251,10 +258,14 @@ load(file.path("data", "palette_options.rda"))
 dplyr::glimpse(palette_options)
 # tibble::view(palette_options)
 
-# Out of curiosity you can check the number of photos / site or per type
+# Check number of palettes per palette type
 palette_options %>% 
-  # dplyr::group_by(lter_site) %>%
   dplyr::group_by(palette_type) %>%
+  dplyr::summarize(count = dplyr::n())
+
+# Can also check per site
+palette_options %>% 
+  dplyr::group_by(lter_site) %>%
   dplyr::summarize(count = dplyr::n())
 
 # Clear environment
