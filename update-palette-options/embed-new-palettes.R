@@ -135,6 +135,9 @@ palette_actual <- palette_df %>%
     # Central Arizona–Phoenix (CAP)
     palette_full_name == "CAP-cactus" ~ "Quincy Stewart",
     palette_full_name == "CAP-lovebird" ~ "Maddy Gibson",
+    # Harvard Forest
+    palette_full_name == "HFR-newt" ~ "Tatiana",
+    palette_full_name == "HFR-sunset" ~ "Augustín León-Sáenz",
     # Hubbard Brook
     palette_full_name %in% c("HBR-canopy", "HBR-lotus",
                              "HBR-mushroom floor") ~ "Ashley Lang",
@@ -182,7 +185,7 @@ palette_actual <- palette_df %>%
     palette_full_name %in% c("ARC-hike", "ARC-sunrise", "BLE-sunset", "CAP-cactus", "HBR-winter tree", "JRN-monsoon", "JRN-rainbow", "JRN-sunset", "KBS-morning", "KBS-storm", "KNZ-bison", "NWT-mountain dawn", "NWT-mountain field", "NWT-mountain flowers", "NWT-snowy mountain", "PAL-net", "SBC-kelp forest", "VCR-marsh"
                              ) ~ "diverging",
     # Tricolor - colors mostly fall into three groups
-    palette_full_name %in% c("AND-salamander", "ARC-autumn", "HBR-mushroom floor", "HBR-mushroom tree", "KBS-fire", "KNZ-night fire", "MCR-lagoon", "NWT-wildflowers", "PAL-penguins"
+    palette_full_name %in% c("AND-salamander", "ARC-autumn", "HBR-mushroom floor", "HBR-mushroom tree", "HFR-newt", "HFR-sunset", "KBS-fire", "KNZ-night fire", "MCR-lagoon", "NWT-wildflowers", "PAL-penguins"
                              ) ~ "tricolor",
     # Qualitative - colors do not follow a gradient and/or seem random
     palette_full_name %in% c("LTER-logo", "AND-reu", "ARC-bucket", "BLE-ice drill", "CAP-lovebird", "HBR-lotus", "JRN-calf", "KBS-burn", "KBS-swallowtail", "KNZ-burn", "KNZ-regal", "NGA-boat", "NTL-lakes", "PAL-boat", "SBC-kelp tag", "VCR-boat"
