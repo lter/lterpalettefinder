@@ -119,7 +119,9 @@ palette_actual <- palette_df %>%
                   sep = "-", remove = FALSE) %>%
   # Manually pull photographer name based on the photo title
   dplyr::mutate(photographer = dplyr::case_when(
+    # Non-Sites
     palette_full_name == "LTER-logo" ~ "LTER Network Office",
+    palette_full_name == "ASM-2022 group" ~ "Alex Phillips",
     # Andrews Forest (AND)
     palette_full_name == "AND-reu" ~ "Lina DiGregorio",
     palette_full_name == "AND-salamander" ~ "Chris Cousins",
@@ -185,7 +187,7 @@ palette_actual <- palette_df %>%
     palette_full_name %in% c("ARC-hike", "ARC-sunrise", "BLE-sunset", "CAP-cactus", "HBR-winter tree", "JRN-monsoon", "JRN-rainbow", "JRN-sunset", "KBS-morning", "KBS-storm", "KNZ-bison", "NWT-mountain dawn", "NWT-mountain field", "NWT-mountain flowers", "NWT-snowy mountain", "PAL-net", "SBC-kelp forest", "VCR-marsh"
                              ) ~ "diverging",
     # Tricolor - colors mostly fall into three groups
-    palette_full_name %in% c("AND-salamander", "ARC-autumn", "HBR-mushroom floor", "HBR-mushroom tree", "HFR-newt", "HFR-sunset", "KBS-fire", "KNZ-night fire", "MCR-lagoon", "NWT-wildflowers", "PAL-penguins"
+    palette_full_name %in% c("ASM-2022 group", "AND-salamander", "ARC-autumn", "HBR-mushroom floor", "HBR-mushroom tree", "HFR-newt", "HFR-sunset", "KBS-fire", "KNZ-night fire", "MCR-lagoon", "NWT-wildflowers", "PAL-penguins"
                              ) ~ "tricolor",
     # Qualitative - colors do not follow a gradient and/or seem random
     palette_full_name %in% c("LTER-logo", "AND-reu", "ARC-bucket", "BLE-ice drill", "CAP-lovebird", "HBR-lotus", "JRN-calf", "KBS-burn", "KBS-swallowtail", "KNZ-burn", "KNZ-regal", "NGA-boat", "NTL-lakes", "PAL-boat", "SBC-kelp tag", "VCR-boat"
