@@ -1,6 +1,6 @@
 Package: lterpalettefinder
 Type: Package
-Title: Identify Palettes Extracted from LTER Photos
+Title: Extract Color Palettes from Photos and Pick Official LTER Palettes
 Version: 1.0.0
 Authors@R: c(
   person(given = "Nicholas J", 
@@ -24,7 +24,7 @@ Description: Allows identification of palettes derived from LTER photographs bas
 License: BSD_3_clause + file LICENSE
 Encoding: UTF-8
 LazyData: true
-RoxygenNote: 7.2.0
+RoxygenNote: 7.2.1
 Depends:
     R (>= 3.5)
 Imports: 
