@@ -8,6 +8,12 @@
 <!-- badges: start -->
 
 [![R-CMD-check](https://github.com/lter/lterpalettefinder/workflows/R-CMD-check/badge.svg)](https://github.com/lter/lterpalettefinder/actions)
+![GitHub last
+commit](https://img.shields.io/github/last-commit/lter/lterpalettefinder)
+![GitHub
+issues](https://img.shields.io/github/issues-raw/lter/lterpalettefinder)
+![GitHub pull
+requests](https://img.shields.io/github/issues-pr/lter/lterpalettefinder)
 
 <!-- badges: end -->
 
