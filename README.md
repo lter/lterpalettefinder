@@ -81,6 +81,18 @@ Note that the vector of hexadecimal codes provided by `palette_find`
 when *only one* official palette meets criteria set by user will also be
 accepted by either `palette_demo` or `...ggdemo`
 
+## Acknowledgements
+
+Creation of this package was funded by National Science Foundation grant
+[\#1929393](https://www.nsf.gov/awardsearch/showAward?AWD_ID=1929393)
+awarded to F. Davis, J. Caselle, and M. Downs.
+
+[Gabriel De La Rosa](https://www.gabrieldelarosa.com/) designed our hex
+logo and provided valuable feedback on early versions of the package.
+
+Thanks also to the whole LTER Network Office team and the broader NCEAS
+community!
+
 ## Palette Examples
 
 These palette examples were generated from photos at LTER sites.
