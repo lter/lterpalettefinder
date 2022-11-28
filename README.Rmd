@@ -33,6 +33,10 @@ You can install the development version of `lterpalettefinder` from [GitHub](htt
 devtools::install_github("lter/lterpalettefinder")
 ```
 
+## R Shiny App
+
+To help demonstrate some of the functionalities of `lterpalettefinder` we have created a [standalone R Shiny app](https://cosima.nceas.ucsb.edu/lterpalettefinder-shiny/) that allows for extracting a palette and demonstrating it entirely through a browser. While we developed this app primarily to support non-R users interested in `lterpalettefinder` we hope it is interesting and valuable to R experts as well! The GitHub repo for the Shiny app can be found [here](https://github.com/lter/lterpalettefinder-shiny)
+
 ## Functions
 
 This package currently includes the following functions:
