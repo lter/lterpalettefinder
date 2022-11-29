@@ -7,3 +7,6 @@
 lterpalettefinder\_hex\.jpg
 ^\.github$
 update-palette-options/
+^_pkgdown\.yml$
+^docs$
+^pkgdown$
