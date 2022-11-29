@@ -3,9 +3,8 @@ Type: Package
 Title: Extract Color Palettes from Photos and Pick Official LTER Palettes
 Version: 1.0.0
 Authors@R: c(
-  person(given = "Nicholas", 
+  person(given = "Nicholas J", 
          family = "Lyon",
-         middle = "J",
          role = c("aut", "cre"),
          email = "njlyon@alumni.iastate.edu",
          comment = c(ORCID = "0000-0003-3905-1078")),
