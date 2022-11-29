@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-<img src="man/figures/_lterpalettefinder_hex.png" align="right" width="15%"/>
+<img src="man/figures/lterpalettefinder_hex.png" align="right" width="15%"/>
 
 # `lterpalettefinder` - Extract Color Palettes from Photos and Pick Official LTER Palettes
 
