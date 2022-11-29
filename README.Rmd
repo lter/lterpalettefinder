@@ -4,7 +4,7 @@ output: github_document
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-<img src="inst/images/lterpalettefinder_hex.png" align="right" width="15%"/>
+<img src="man/figures/_lterpalettefinder_hex.png" align="right" width="15%"/>
 
 ```{r, include = FALSE}
 knitr::opts_chunk$set(collapse = TRUE, comment = "#>",
@@ -73,43 +73,20 @@ Thanks also to the whole LTER Network Office team and the broader NCEAS communit
 
 These palette examples were generated from photos at LTER sites.
 
-```{r library, include = F}
-devtools::install_github("lter/lterpalettefinder")
-library(lterpalettefinder)
-```
+### [Santa Barbara Coastal LTER](https://sbclter.msi.ucsb.edu/) + `palette_demo`
 
-#### [Santa Barbara Coastal LTER](https://sbclter.msi.ucsb.edu/) + `palette_demo`
+**Image** | **Palette**
+:-------------:|:------------:
+<img src="man/figures/SBC-kelp-forest.jpeg" alt="Photo credit: SBC LTER"/> | <img src="man/figures/SBC_kelp-forest-palette.jpg"/>
 
-<img src="update-palette-options/official photos/SBC-kelp forest.jpeg" alt="Photo credit: SBC LTER" />
+### [Arctic LTER](https://arc-lter.ecosystems.mbl.edu/) + `palette_ggdemo`
 
-```{r sbc-extract, message = F, echo = F}
-sbc_colors <- palette_extract(image = file.path("update-palette-options", "official photos", "SBC-kelp forest.jpeg"), sort = TRUE)
-palette_demo(palette = sbc_colors)
-```
+**Image** | **Palette**
+:-------------:|:------------:
+<img src="man/figures/ARC-sunrise.jpeg" alt="Photo credit: Lindsay VanFossen"/> | <img src="man/figures/ARC_sunrise-palette.jpeg"/>
 
-#### [North Temperate Lakes LTER](https://lter.limnology.wisc.edu/) + `palette_ggdemo`
+### [Kellogg Biological Station LTER](https://lter.kbs.msu.edu/) + `palette_demo`
 
-<img src="update-palette-options/official photos/NTL-lakes.jpeg" alt="Photo credit: Carl Bowser" />
-
-```{r ntl-extract, message = F, echo = F}
-ntl_colors <- palette_extract(image = file.path("update-palette-options", "official photos", "NTL-lakes.jpeg"), sort = TRUE)
-palette_ggdemo(palette = ntl_colors)
-```
-
-#### [Kellogg Biological Station LTER](https://lter.kbs.msu.edu/) + `palette_demo`
-
-<img src="update-palette-options/official photos/KBS-burn.jpeg" alt="Photo credit: G.P. Robertson" />
-
-```{r kbs-extract, message = F, echo = F}
-kbs_colors <- palette_extract(image = file.path("update-palette-options", "official photos", "KBS-burn.jpeg"), sort = TRUE)
-palette_demo(palette = kbs_colors)
-```
-
-#### [Arctic LTER](https://arc-lter.ecosystems.mbl.edu/) + `palette_ggdemo`
-
-<img src="update-palette-options/official photos/ARC-sunrise.jpeg" alt="Photo credit: Lindsay VanFossen" />
-
-```{r arc-extract, message = F, echo = F}
-arc_colors <- palette_extract(image = file.path("update-palette-options", "official photos", "ARC-sunrise.jpeg"), sort = TRUE)
-palette_ggdemo(palette = arc_colors)
-```
+**Image** | **Palette**
+:-------------:|:------------:
+<img src="man/figures/KBS-burn.jpeg" alt="Photo credit: G.P. Robertson"/> | <img src="man/figures/KBS_burn-palette.jpg"/>

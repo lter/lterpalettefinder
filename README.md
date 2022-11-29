@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-<img src="inst/images/lterpalettefinder_hex.png" align="right" width="15%"/>
+<img src="man/figures/_lterpalettefinder_hex.png" align="right" width="15%"/>
 
 # `lterpalettefinder` - Extract Color Palettes from Photos and Pick Official LTER Palettes
 
@@ -97,26 +97,20 @@ community!
 
 These palette examples were generated from photos at LTER sites.
 
-#### [Santa Barbara Coastal LTER](https://sbclter.msi.ucsb.edu/) + `palette_demo`
+### [Santa Barbara Coastal LTER](https://sbclter.msi.ucsb.edu/) + `palette_demo`
 
-<img src="update-palette-options/official photos/SBC-kelp forest.jpeg" alt="Photo credit: SBC LTER" />
+|                                 **Image**                                  |                     **Palette**                      |
+|:--------------------------------------------------------------------------:|:----------------------------------------------------:|
+| <img src="man/figures/SBC-kelp-forest.jpeg" alt="Photo credit: SBC LTER"/> | <img src="man/figures/SBC_kelp-forest-palette.jpg"/> |
 
-![](man/figures/README-sbc-extract-1.png)<!-- -->
+### [Arctic LTER](https://arc-lter.ecosystems.mbl.edu/) + `palette_ggdemo`
 
-#### [North Temperate Lakes LTER](https://lter.limnology.wisc.edu/) + `palette_ggdemo`
+|                                    **Image**                                    |                    **Palette**                    |
+|:-------------------------------------------------------------------------------:|:-------------------------------------------------:|
+| <img src="man/figures/ARC-sunrise.jpeg" alt="Photo credit: Lindsay VanFossen"/> | <img src="man/figures/ARC_sunrise-palette.jpeg"/> |
 
-<img src="update-palette-options/official photos/NTL-lakes.jpeg" alt="Photo credit: Carl Bowser" />
+### [Kellogg Biological Station LTER](https://lter.kbs.msu.edu/) + `palette_demo`
 
-![](man/figures/README-ntl-extract-1.png)<!-- -->
-
-#### [Kellogg Biological Station LTER](https://lter.kbs.msu.edu/) + `palette_demo`
-
-<img src="update-palette-options/official photos/KBS-burn.jpeg" alt="Photo credit: G.P. Robertson" />
-
-![](man/figures/README-kbs-extract-1.png)<!-- -->
-
-#### [Arctic LTER](https://arc-lter.ecosystems.mbl.edu/) + `palette_ggdemo`
-
-<img src="update-palette-options/official photos/ARC-sunrise.jpeg" alt="Photo credit: Lindsay VanFossen" />
-
-![](man/figures/README-arc-extract-1.png)<!-- -->
+|                                 **Image**                                 |                  **Palette**                  |
+|:-------------------------------------------------------------------------:|:---------------------------------------------:|
+| <img src="man/figures/KBS-burn.jpeg" alt="Photo credit: G.P. Robertson"/> | <img src="man/figures/KBS_burn-palette.jpg"/> |
