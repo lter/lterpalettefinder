@@ -21,7 +21,7 @@ Authors@R: c(
          role = "fnd",
          comment = "NSF 1929393, 09/01/2019 - 08/31/2024")
   )
-Maintainer: Nicholas Lyon <njlyon@alumni.iastate.edu>
+Maintainer: Nicholas J Lyon <njlyon@alumni.iastate.edu>
 Description: Allows identification of palettes derived from LTER photographs based on user criteria.
    Also facilitates extraction of palettes from users' photos directly.
 License: BSD_3_clause + file LICENSE
