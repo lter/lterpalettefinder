@@ -9,5 +9,6 @@ lterpalettefinder\_hex\.jpg
 update-palette-options/
 ^_pkgdown\.yml$
 ^docs$
+LICENSE.md
 ^pkgdown$
 ^CRAN-SUBMISSION$
