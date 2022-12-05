@@ -9,9 +9,7 @@
 #'
 #' @examples
 #' # Check for misformatted hexcodes
-#' \dontrun{
-#' palette_check(c("#8e847a", "#9fc7f2g3"))
-#' }
+#' palette_check(palette = c("#8e847a", "#9fc7f2"))
 palette_check <- function(palette){
 
   # Check if palette is a character vector

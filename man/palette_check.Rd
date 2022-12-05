@@ -17,7 +17,5 @@ Accepts the hexadecimal code vector and tests if it is formatted correctly
 }
 \examples{
 # Check for misformatted hexcodes
-\dontrun{
-palette_check(c("#8e847a", "#9fc7f2g3"))
-}
+palette_check(palette = c("#8e847a", "#9fc7f2"))
 }
