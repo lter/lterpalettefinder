@@ -6,7 +6,7 @@
 \alias{lterpalettefinder-package}
 \title{lterpalettefinder: Extract Color Palettes from Photos and Pick Official LTER Palettes}
 \description{
-Allows identification of palettes derived from LTER photographs based on user criteria. Also facilitates extraction of palettes from users' photos directly.
+Allows identification of palettes derived from LTER (Long Term Ecological Research) photographs based on user criteria. Also facilitates extraction of palettes from users' photos directly.
 }
 \seealso{
 Useful links:
