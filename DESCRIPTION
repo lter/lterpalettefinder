@@ -1,7 +1,7 @@
 Package: lterpalettefinder
 Type: Package
 Title: Extract Color Palettes from Photos and Pick Official LTER Palettes
-Version: 1.0.0
+Version: 1.0.0.9000
 Authors@R: c(
   person(given = "Nicholas J", 
          family = "Lyon",

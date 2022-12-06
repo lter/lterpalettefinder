@@ -1,5 +1,5 @@
 ## R CMD check results
-There were no ERRORs, WARNINGs, or NOTEs. This is the first submission of this package so there may be a NOTE to that effect.
+There were no ERRORs, WARNINGs, or NOTEs.
 
 ## Downstream dependencies
 There are currently no downstream dependencies for this package.
