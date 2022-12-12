@@ -1,4 +1,4 @@
-#' @title Find an LTER Palette
+#' @title Find a Long Term Ecological Research (LTER) Site-Derived Palette
 #' 
 #' @description From a dataframe of all possible palettes (updated periodically so check back!) specify the characteristics of the palette you want and retrieve the palettes that match those criteria. Can specify by number of colors in the palette, type of palette (e.g., qualitative, sequential, etc.), or which LTER site the palette came from.
 #' 

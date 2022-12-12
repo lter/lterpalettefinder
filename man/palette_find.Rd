@@ -2,7 +2,7 @@
 % Please edit documentation in R/palette_find.R
 \name{palette_find}
 \alias{palette_find}
-\title{Find an LTER Palette}
+\title{Find a Long Term Ecological Research (LTER) Site-Derived Palette}
 \usage{
 palette_find(site = "all", name = "all", type = "all")
 }
