@@ -18,11 +18,13 @@ requests](https://img.shields.io/github/issues-pr/lter/lterpalettefinder)
 <!-- badges: end -->
 
 The goal of `lterpalettefinder` is to provide high quality color
-palettes derived from photos at LTER sites. This allows users to create
-beautiful graphics that have close visual ties to photos from the places
-where data were collected. This package also allows users to generate
-their own palettes from any photo (PNG, JPEG, TIFF, or HEIC) if the
-current palettes in the function do not meet their needs.
+palettes derived from photos at Long Term Ecological Research (LTER)
+sites. This allows users to create beautiful graphics that have close
+visual ties to photos from the places where data were collected. This
+package also allows users to generate their own palettes from any photo
+(PNG, JPEG, TIFF, or HEIC) if the current palettes in the function do
+not meet their needs. For more information on the LTER Network, check
+out [our website](https://lternet.edu/)!
 
 ## Installation
 
@@ -43,7 +45,7 @@ for extracting a palette and demonstrating it entirely through a
 browser. While we developed this app primarily to support non-R users
 interested in `lterpalettefinder` we hope it is interesting and valuable
 to R experts as well! The GitHub repo for the Shiny app can be found
-[here](https://github.com/lter/lterpalettefinder-shiny)
+[here](https://github.com/lter/lterpalettefinder-shiny).
 
 ## Functions
 
