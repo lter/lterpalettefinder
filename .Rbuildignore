@@ -12,3 +12,4 @@ update-palette-options/
 LICENSE.md
 ^pkgdown$
 ^CRAN-SUBMISSION$
+troubleshooting/
