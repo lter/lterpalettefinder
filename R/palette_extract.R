@@ -19,10 +19,9 @@
 #' # Plot that result
 #' palette_demo(palette = my_colors)
 #' 
-palette_extract <- function(image, sort = FALSE,
-                            progress_bar = TRUE){
+palette_extract <- function(image, sort = FALSE, progress_bar = TRUE){
   # To squelch error in variable bindings, call all unquoted variables as NULL
-  rawRGB <- red <- green <- blue <- NULL
+  red <- green <- blue <- NULL
   
   # Error for unspecified file suffix
   if(!tools::file_ext(image) %in% c("png", "jpg", "jpeg", "tiff", "heic") &
@@ -52,70 +51,75 @@ palette_extract <- function(image, sort = FALSE,
     pic <- png::readPNG(source = temp_image, native = FALSE) 
     # Delete the temporary file
     base::unlink(x = temp_image, recursive = FALSE, force = FALSE) }
-    
-    # Extract RGB channels
-    if (progress_bar == TRUE) {base::message("{==        }")} # 2
-    rawR <- base::as.integer(pic[,,1] * 255)
-    rawG <- base::as.integer(pic[,,2] * 255)
-    rawB <- base::as.integer(pic[,,3] * 255)
-    
-    # Put them into a dataframe
-    if (progress_bar == TRUE) {base::message("{===       }")} # 3
-    rgb_v1 <- base::data.frame(red = rawR, green = rawG, blue = rawB)
-    
-    # Subset out very dark colors
-    if (progress_bar == TRUE) {base::message("{====      }")} # 4
-    rgb_v2 <- dplyr::filter(.data = rgb_v1,
-                            red >= 65 & green >= 65 & blue >= 65)
-    
-    # Return only unique values
-    if (progress_bar == TRUE) {base::message("{=====     }")} # 5
-    rgb_v3 <- base::unique(rgb_v2)
-    
-    # Do k-means clustering on these values
-    if (progress_bar == TRUE) {base::message("{======    }")} # 6
+  
+  # Extract RGB channels
+  if (progress_bar == TRUE) {base::message("{==        }")} # 2
+  rawR <- base::as.integer(pic[,,1] * 255)
+  rawG <- base::as.integer(pic[,,2] * 255)
+  rawB <- base::as.integer(pic[,,3] * 255)
+  
+  # Put them into a dataframe
+  if (progress_bar == TRUE) {base::message("{===       }")} # 3
+  rgb_v1 <- base::data.frame("red" = rawR, "green" = rawG, "blue" = rawB)
+  
+  # Subset out very dark colors (i.e., those with RGB values all below a threshold)
+  if (progress_bar == TRUE) {base::message("{====      }")} # 4
+  rgb_v2 <- rgb_v1 %>%
+    dplyr::filter(!(red < 65 & green < 65 & blue < 65))
+  
+  # Return only unique values
+  if (progress_bar == TRUE) {base::message("{=====     }")} # 5
+  rgb_v3 <- base::unique(rgb_v2)
+  
+  # If >25 colors, do k-means clustering on these RGB values
+  if (progress_bar == TRUE) {base::message("{======    }")} # 6
+  ## More than 25 colors
+  if(nrow(rgb_v3) > 25){
     rgb_v4 <- base::as.data.frame(
       base::suppressWarnings(
         stats::kmeans(x = rgb_v3, centers = 25,
-                      iter.max = 100, nstart = 1)$centers))
+                      iter.max = 100, nstart = 1)$centers)) }
+  ## Fewer than 25 colors
+  if(nrow(rgb_v3) <= 25){ rgb_v4 <- rgb_v3 }
+  
+  
+  # Turn them into integers (instead of continuous numbers)
+  if (progress_bar == TRUE) {base::message("{=======   }")} # 7
+  rgb_v5 <- rgb_v4 %>%
+    dplyr::mutate(red = base::as.integer(red),
+                  green = base::as.integer(green),
+                  blue = base::as.integer(blue))
+  
+  # Coerce them into hexadecimals
+  if (progress_bar == TRUE) {base::message("{========  }")} # 8
+  hexR <- base::as.hexmode(rgb_v5$red)
+  hexG <- base::as.hexmode(rgb_v5$green)
+  hexB <- base::as.hexmode(rgb_v5$blue)
+  
+  # Bind hexadecimals into HEX codes
+  if (progress_bar == TRUE) {base::message("{========= }")} # 9
+  hex_vec <- base::paste0('#',
+                          base::as.character(hexR),
+                          base::as.character(hexG),
+                          base::as.character(hexB))
+  
+  # Return only unique values to the user
+  hexes <- base::data.frame(hex_code = base::unique(hex_vec))
+  
+  # Make it a vector
+  hex_vec <- base::as.character(hexes$hex_code)
+  
+  # If sorting is not requested, return unsorted vec
+  if(sort == FALSE){ 
+    return(hex_vec) 
+  } else { 
     
-    # Turn them into integers (instead of continuous numbers)
-    if (progress_bar == TRUE) {base::message("{=======   }")} # 7
-    rgb_v5 <- rgb_v4 %>%
-      dplyr::mutate(red = base::as.integer(red),
-                    green = base::as.integer(green),
-                    blue = base::as.integer(blue))
-    
-    # Coerce them into hexadecimals
-    if (progress_bar == TRUE) {base::message("{========  }")} # 8
-    hexR <- base::as.hexmode(rgb_v5$red)
-    hexG <- base::as.hexmode(rgb_v5$green)
-    hexB <- base::as.hexmode(rgb_v5$blue)
-    
-    # Bind hexadecimals into HEX codes
-    if (progress_bar == TRUE) {base::message("{========= }")} # 9
-    hex_vec <- base::paste0('#',
-                            base::as.character(hexR),
-                            base::as.character(hexG),
-                            base::as.character(hexB))
-    
-    # Return only unique values to the user
-    hexes <- base::data.frame(hex_code = base::unique(hex_vec))
-    
-    # Make it a vector
-    hex_vec <- base::as.character(hexes$hex_code)
-    
-    # If sorting is not requested, return unsorted vec
-    if(sort == FALSE){ 
-      return(hex_vec) 
-      } else { 
-      
     # Otherwise sort the output colors
-        if (progress_bar == TRUE) {base::message("Sorting colors")}
-      hex_sort <- lterpalettefinder::palette_sort(palette = hex_vec)
-      return(hex_sort)
-      }
-    
-    # Complete progress bar
-    if (progress_bar == TRUE) {base::message("{==========}")} # 10
-    }
+    if (progress_bar == TRUE) {base::message("Sorting colors")}
+    hex_sort <- lterpalettefinder::palette_sort(palette = hex_vec)
+    return(hex_sort)
+  }
+  
+  # Complete progress bar
+  if (progress_bar == TRUE) {base::message("{==========}")} # 10
+}
