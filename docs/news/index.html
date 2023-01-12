@@ -50,7 +50,9 @@
     <div class="section level2">
 <h2 class="pkg-version" data-toc-text="1.0.0.9000" id="lterpalettefinder-version-1009000">lterpalettefinder Version 1.0.0.9000<a class="anchor" aria-label="anchor" href="#lterpalettefinder-version-1009000"></a></h2>
 <p>Development version of <code>lterpalettefinder</code> following version 1.0.0. Changes to the package will be listed here as they are created.</p>
-<ul><li>LTER acronym (Long Term Ecological Research) defined in README and <code>palette_find</code> function documentation.</li>
+<ul><li>Fixed issue where <code>palette_extract</code> failed for images with fewer than 25 colors</li>
+<li>Tweaked <code>palette_extract</code> handling of exclusion of very dark colors to avoid accidental removal of colors with very low values in two RGB bands but high value in the third</li>
+<li>LTER acronym (Long Term Ecological Research) defined in README and <code>palette_find</code> function documentation</li>
 </ul></div>
     <div class="section level2">
 <h2 class="pkg-version" data-toc-text="1.0.0" id="lterpalettefinder-version-100">lterpalettefinder Version 1.0.0<a class="anchor" aria-label="anchor" href="#lterpalettefinder-version-100"></a></h2><p class="text-muted">CRAN release: 2022-12-06</p>
