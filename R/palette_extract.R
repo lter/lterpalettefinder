@@ -91,16 +91,21 @@ palette_extract <- function(image, sort = FALSE, progress_bar = TRUE){
   
   # Coerce them into hexadecimals
   if (progress_bar == TRUE) {base::message("{========  }")} # 8
-  hexR <- base::as.hexmode(rgb_v5$red)
-  hexG <- base::as.hexmode(rgb_v5$green)
-  hexB <- base::as.hexmode(rgb_v5$blue)
+  hexR <- base::as.character(base::as.hexmode(rgb_v5$red))
+  hexG <- base::as.character(base::as.hexmode(rgb_v5$green))
+  hexB <- base::as.character(base::as.hexmode(rgb_v5$blue))
+  
+  # Handle dropping of leading zero for integers <15 (i.e., one-digit hexadecimals)
+  hexR_fix <- base::ifelse(test = base::nchar(hexR) == 1,
+                           yes = paste0("0", hexR), no = hexR)
+  hexG_fix <- base::ifelse(test = base::nchar(hexG) == 1,
+                           yes = paste0("0", hexG), no = hexG)
+  hexB_fix <- base::ifelse(test = base::nchar(hexB) == 1,
+                           yes = paste0("0", hexB), no = hexB)
   
   # Bind hexadecimals into HEX codes
   if (progress_bar == TRUE) {base::message("{========= }")} # 9
-  hex_vec <- base::paste0('#',
-                          base::as.character(hexR),
-                          base::as.character(hexG),
-                          base::as.character(hexB))
+  hex_vec <- base::paste0('#', hexR_fix, hexG_fix, hexB_fix)
   
   # Return only unique values to the user
   hexes <- base::data.frame(hex_code = base::unique(hex_vec))
