@@ -25,85 +25,88 @@ image_path <- file.path("troubleshooting", "simple_image.png")
 
 # Check it
 palette_ggdemo(palette = test)
-## Fails due to malformed hexcodes
-## Need to recreate the function step-by-step to see where it fails/how to fix it
 
-# What happens if we make small integers and convert to hex format?
-small_int <- base::as.integer(x = 1:15)
-base::as.hexmode(x = small_int)
+# But if we try to sort it:
+(test_sort <- palette_sort(palette = test))
+## We reproduce malformed hexcodes
 
-# Versus using a vector that includes both one and two digit hexadecimals?
-lrg_int <- base::as.integer(x = 1:25)
-base::as.hexmode(x = lrg_int)
+# Time to fix step-by-step!
 
-# Name file
-image <- file.path("troubleshooting", "simple_image.png")
+# Get provided vector into a dataframe
+hex_df <- base::data.frame("hex_code" = test)
 
-# Read it in
-pic <- png::readPNG(source = image, native = FALSE)
+# Strip RGB back out of HEX codes
+rgb <- base::as.data.frame(
+  base::t(grDevices::col2rgb(hex_df$hex_code)))
 
-# Extract RGB channels
-rawR <- base::as.integer(pic[,,1] * 255)
-rawG <- base::as.integer(pic[,,2] * 255)
-rawB <- base::as.integer(pic[,,3] * 255)
+# Coerce to 0-1
+rgb_v2 <- rgb %>%
+  dplyr::mutate(
+    binR = red / 255,
+    binG = green / 255,
+    binB = blue / 255,
+    # And assign a color ID for later use
+    color_id = 1:base::nrow(rgb),
+    .keep = 'unused')
 
-# Put them into a dataframe
-rgb_v1 <- base::data.frame("red" = rawR, "green" = rawG, "blue" = rawB)
+# Pivot to longer
+rgb_v3 <- rgb_v2 %>%
+  tidyr::pivot_longer(cols = -color_id,
+                      names_to = 'color',
+                      values_to = 'value') %>%
+  base::as.data.frame()
 
-# Subset out very dark colors (i.e., those with RGB values all below a threshold)
-rgb_v2 <- rgb_v1 %>%
-  dplyr::filter(!(red < 65 & green < 65 & blue < 65))
+# Identify the maximum and minimum per color
+rgb_v4 <- rgb_v3 %>%
+  dplyr::group_by(color_id) %>%
+  dplyr::mutate(max_val = base::max(value),
+                max_col = color[base::which.max(value)],
+                min_val = base::min(value),
+                luminosity = (max_val - min_val)) %>%
+  tidyr::pivot_wider(names_from = color,
+                     values_from = value) %>%
+  base::as.data.frame()
 
-# Return only unique values
-rgb_v3 <- base::unique(rgb_v2)
-
-# If >25 colors, do k-means clustering on these RGB values
-## More than 25 colors
-if(nrow(rgb_v3) > 25){
-  rgb_v4 <- base::as.data.frame(
-    base::suppressWarnings(
-      stats::kmeans(x = rgb_v3, centers = 25,
-                    iter.max = 100, nstart = 1)$centers)) }
-## Fewer than 25 colors
-if(nrow(rgb_v3) <= 25){ rgb_v4 <- rgb_v3 }
-
-# Turn them into integers (instead of continuous numbers)
+# Calculate hue and saturation!
 rgb_v5 <- rgb_v4 %>%
-  dplyr::mutate(red = base::as.integer(red),
-                green = base::as.integer(green),
-                blue = base::as.integer(blue))
+  dplyr::mutate(
+    # Hue first
+    hue = dplyr::case_when(
+      max_col == "binR" ~ ( 60 * ((binG - binB) / luminosity) ),
+      max_col == "binG" ~ ( 60 * (2 + (binB - binR) / luminosity) ),
+      max_col == "binB" ~ ( 60 * (4 + (binR - binG) / luminosity) )),
+    # Then saturation
+    saturation = dplyr::case_when(
+      luminosity <= 0.5 ~ luminosity / (max_val + min_val),
+      luminosity > 0.5 ~ luminosity / (2 - luminosity) ) )
 
-# Coerce them into hexadecimals and coerce those into characters
-hexR <- base::as.character(base::as.hexmode(rgb_v5$red))
-hexG <- base::as.character(base::as.hexmode(rgb_v5$green))
-hexB <- base::as.character(base::as.hexmode(rgb_v5$blue))
+# Get hexadecimals back
+rgb_v6 <- rgb_v5 %>%
+  dplyr::mutate(
+    hexR = base::as.character(base::as.hexmode(binR * 255)),
+    hexG = base::as.character(base::as.hexmode(binG * 255)),
+    hexB = base::as.character(base::as.hexmode(binB * 255))) %>%
+  # Perform same 'regain dropped leading 0' operation done in `palette_extract`
+  dplyr::mutate(hexR_fix = base::ifelse(test = base::nchar(hexR) == 1,
+                                         yes = paste0("0", hexR), no = hexR),
+                hexG_fix = base::ifelse(test = base::nchar(hexG) == 1,
+                                         yes = paste0("0", hexG), no = hexG),
+                hexB_fix = base::ifelse(test = base::nchar(hexB) == 1,
+                                         yes = paste0("0", hexB), no = hexB)) %>%
+  # Create hexcodes from these
+  dplyr::mutate(hex_code = base::paste0("#", hexR_fix, hexG_fix, hexB_fix))
 
-# Handle dropping of leading zero for integers <15 (i.e., one-digit hexadecimals)
-hexR_fix <- base::ifelse(test = base::nchar(hexR) == 1,
-                         yes = paste0("0", hexR),
-                         no = hexR)
-hexG_fix <- base::ifelse(test = base::nchar(hexG) == 1,
-                         yes = paste0("0", hexG),
-                         no = hexG)
-hexB_fix <- base::ifelse(test = base::nchar(hexB) == 1,
-                         yes = paste0("0", hexB),
-                         no = hexB)
+# Order by hue and saturation
+rgb_v7 <- rgb_v6[base::with( rgb_v6, base::order(hue, saturation)),]
 
-# Bind hexadecimals into HEX codes
-hex_vec <- base::paste0('#', hexR_fix, hexG_fix, hexB_fix)
+# Get only hex_code
+hex_out <- dplyr::select(.data = rgb_v7, hex_code)
 
-# Return only unique values to the user
-hexes <- base::data.frame(hex_code = base::unique(hex_vec))
+# Make a character vector
+hex_vec <- base::as.character(hex_out$hex_code)
 
-# Make it a vector
-hex_vec <- base::as.character(hexes$hex_code)
-
-# Sort colors
-hex_sort <- lterpalettefinder::palette_sort(palette = hex_vec)
-
-# Visualize sorted and unsorted
+# Plot this for sanity check
 palette_ggdemo(hex_vec)
-palette_ggdemo(hex_sort)
 
 # Clear environment again
 rm(list = ls())

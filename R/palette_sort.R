@@ -34,7 +34,7 @@ palette_sort <- function(palette){
   hexR <- hexG <- hexB <- hue <- saturation <- hex_code <- NULL
   
   # Get provided vector into a dataframe
-  hex_df <- base::data.frame(hex_code = palette)
+  hex_df <- base::data.frame("hex_code" = palette)
   
   # Strip RGB back out of HEX codes
   rgb <- base::as.data.frame(
@@ -83,13 +83,20 @@ palette_sort <- function(palette){
   
   # Get hexadecimals back
   rgb_v6 <- rgb_v5 %>%
-    dplyr::mutate(hexR = base::as.character(
-      base::as.hexmode(binR * 255)),
-      hexG = base::as.character(
-        base::as.hexmode(binG * 255)),
-      hexB = base::as.character(
-        base::as.hexmode(binB * 255)),
-      hex_code = base::paste0("#", hexR, hexG, hexB) )
+    # Get hexadecimal as a character from RGB values
+    dplyr::mutate(
+      hexR = base::as.character(base::as.hexmode(binR * 255)),
+      hexG = base::as.character(base::as.hexmode(binG * 255)),
+      hexB = base::as.character(base::as.hexmode(binB * 255))) %>%
+    # Perform same 'regain dropped leading 0' operation done in `palette_extract`
+    dplyr::mutate(hexR_fix = base::ifelse(test = base::nchar(hexR) == 1,
+                                          yes = paste0("0", hexR), no = hexR),
+                  hexG_fix = base::ifelse(test = base::nchar(hexG) == 1,
+                                          yes = paste0("0", hexG), no = hexG),
+                  hexB_fix = base::ifelse(test = base::nchar(hexB) == 1,
+                                          yes = paste0("0", hexB), no = hexB)) %>%
+    # Create hexcodes from these
+    dplyr::mutate(hex_code = base::paste0("#", hexR_fix, hexG_fix, hexB_fix))
   
   # Order by hue and saturation
   rgb_v7 <- rgb_v6[base::with( rgb_v6, base::order(hue, saturation)),]
