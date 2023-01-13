@@ -82,7 +82,6 @@ palette_extract <- function(image, sort = FALSE, progress_bar = TRUE){
   ## Fewer than 25 colors
   if(nrow(rgb_v3) <= 25){ rgb_v4 <- rgb_v3 }
   
-  
   # Turn them into integers (instead of continuous numbers)
   if (progress_bar == TRUE) {base::message("{=======   }")} # 7
   rgb_v5 <- rgb_v4 %>%
