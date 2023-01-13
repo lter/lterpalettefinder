@@ -21,7 +21,7 @@ devtools::load_all()
 image_path <- file.path("troubleshooting", "simple_image.png")
 
 # Use palette_extract on the test image
-(test <- lterpalettefinder::palette_extract(image = image_path, progress_bar = T))
+(test <- palette_extract(image = image_path, progress_bar = T))
 
 # Check it
 palette_ggdemo(palette = test)
