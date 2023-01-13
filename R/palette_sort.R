@@ -31,7 +31,8 @@ palette_sort <- function(palette){
   # Squelch visible bindings note by assigning unquoted variables to NULL
   red <- green <- blue <- color_id <- value <- color <- NULL
   max_val <- min_val <- binR <- binG <- binB <- NULL
-  hexR <- hexG <- hexB <- hue <- saturation <- hex_code <- NULL
+  hexR <- hexG <- hexB <- hue <- saturation <- NULL
+  hexR_fix <- hexG_fix <- hexB_fix <- hex_code <- NULL
   
   # Get provided vector into a dataframe
   hex_df <- base::data.frame("hex_code" = palette)
