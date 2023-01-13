@@ -28,7 +28,14 @@ palette_ggdemo(palette = test)
 
 # But if we try to sort it:
 (test_sort <- palette_sort(palette = test))
-## We reproduce malformed hexcodes
+
+# Check this
+palette_ggdemo(palette = test_sort)
+
+# Triple check: do extraction with embedded sorting
+test2 <- palette_extract(image = image_path, sort = TRUE, progress_bar = T)
+palette_ggdemo(palette = test2)
+## Works!
 
 # Time to fix step-by-step!
 
