@@ -10,7 +10,7 @@
     
     <a class="navbar-brand me-2" href="../index.html">lterpalettefinder</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.0.0.9000</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.1.0</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -48,8 +48,8 @@
     </div>
 
     <div class="section level2">
-<h2 class="pkg-version" data-toc-text="1.0.0.9000" id="lterpalettefinder-version-1009000">lterpalettefinder Version 1.0.0.9000<a class="anchor" aria-label="anchor" href="#lterpalettefinder-version-1009000"></a></h2>
-<p>Development version of <code>lterpalettefinder</code> following version 1.0.0. Changes to the package will be listed here as they are created.</p>
+<h2 class="pkg-version" data-toc-text="1.1.0" id="lterpalettefinder-version-110">lterpalettefinder Version 1.1.0<a class="anchor" aria-label="anchor" href="#lterpalettefinder-version-110"></a></h2>
+<p>Changes to <code>lterpalettefinder</code> from version 1.0.0 (the preceding version)</p>
 <ul><li>Fixed issue where <code>palette_extract</code> failed for images with fewer than 25 colors</li>
 <li>Tweaked <code>palette_extract</code> handling of exclusion of very dark colors to avoid accidental removal of colors with very low values in two RGB bands but high value in the third</li>
 <li>Fixed problem where <code><a href="https://rdrr.io/r/base/character.html" class="external-link">base::as.character</a></code> drops leading 0 of two-digit hexadecimals (<code>hexmode</code> objects) for both <code>palette_extract</code> and <code>palette_sort</code>
