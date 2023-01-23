@@ -1,3 +1,7 @@
+# lterpalettefinder Version 1.1.0.900
+
+Development version of `lterpalttefinder` will be updated as changes are made.
+
 # lterpalettefinder Version 1.1.0
 
 Changes to `lterpalettefinder` from version 1.0.0 (the preceding version)
