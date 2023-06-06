@@ -8,8 +8,7 @@
 <!-- badges: start -->
 
 [![R-CMD-check](https://github.com/lter/lterpalettefinder/workflows/R-CMD-check/badge.svg)](https://github.com/lter/lterpalettefinder/actions)
-![GitHub last
-commit](https://img.shields.io/github/last-commit/lter/lterpalettefinder)
+[![](https://cranlogs.r-pkg.org/badges/lterpalettefinder)](https://cran.r-project.org/package=lterpalettefinder)
 ![GitHub
 issues](https://img.shields.io/github/issues-raw/lter/lterpalettefinder)
 ![GitHub pull
