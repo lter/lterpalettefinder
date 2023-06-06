@@ -23,6 +23,7 @@ Other contributors:
   \item Gabe De La Rosa \email{delarosa@nceas.ucsb.edu} [contributor]
   \item Julien Brun \email{brun@nceas.ucsb.edu} (\href{https://orcid.org/0000-0002-7751-6238}{ORCID}) [contributor]
   \item  National Science Foundation (NSF 1929393, 09/01/2019 - 08/31/2024) [funder]
+  \item  University of California, Santa Barbara [copyright holder]
 }
 
 }
