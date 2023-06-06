@@ -19,7 +19,9 @@ Authors@R: c(
          comment = c(ORCID = "0000-0002-7751-6238")),
   person(family = "National Science Foundation",
          role = "fnd",
-         comment = "NSF 1929393, 09/01/2019 - 08/31/2024")
+         comment = "NSF 1929393, 09/01/2019 - 08/31/2024"),
+  person(family = "University of California, Santa Barbara",
+         role = "cph")
   )
 Maintainer: Nicholas J Lyon <njlyon@alumni.iastate.edu>
 Description: Allows identification of palettes derived from LTER (Long Term Ecological Research) 
