@@ -1,0 +1,5 @@
+# License
+
+    YEAR: 2022
+    COPYRIGHT HOLDER: University of California, Santa Barbara
+    ORGANIZATION: University of California, Santa Barbara
