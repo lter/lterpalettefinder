@@ -3,14 +3,9 @@
 
 # `lterpalettefinder` - Extract Color Palettes from Photos and Pick Official LTER Palettes
 
-<!-- badges: start -->
-
+![NSF Award](https://img.shields.io/badge/NSF%202024-1929393-orange.svg)
 [![R-CMD-check](https://github.com/lter/lterpalettefinder/workflows/R-CMD-check/badge.svg)](https://github.com/lter/lterpalettefinder/actions)
 [![](https://cranlogs.r-pkg.org/badges/lterpalettefinder)](https://cran.r-project.org/package=lterpalettefinder)
-![GitHub issues](https://img.shields.io/github/issues-raw/lter/lterpalettefinder)
-![GitHub pull requests](https://img.shields.io/github/issues-pr/lter/lterpalettefinder)
-
-<!-- badges: end -->
 
 The goal of `lterpalettefinder` is to provide high quality color palettes derived from photos at Long Term Ecological Research (LTER) sites. This allows users to create beautiful graphics that have close visual ties to photos from the places where data were collected. This package also allows users to generate their own palettes from any photo (PNG, JPEG, TIFF, or HEIC) if the current palettes in the function do not meet their needs. For more information on the LTER Network, check out [our website](https://lternet.edu/)!
 
@@ -50,14 +45,6 @@ This package currently includes the following functions:
 -   **`palette_ggdemo`** creates an exploratory **`ggplot2`** graph from a vector of hexadecimal codes (like that returned by either `palette_extract`, `..._sort`, or `..._subsample`)
 
 Note that the vector of hexadecimal codes provided by `palette_find` when *only one* official palette meets criteria set by user will also be accepted by either `palette_demo` or `...ggdemo`
-
-## Acknowledgements
-
-Creation of this package was funded by National Science Foundation grant [#1929393](https://www.nsf.gov/awardsearch/showAward?AWD_ID=1929393) awarded to F. Davis, J. Caselle, and M. Downs.
-
-[Gabriel De La Rosa](https://www.gabrieldelarosa.com/) designed our hex logo and provided valuable feedback on early versions of the package.
-
-Thanks also to the whole LTER Network Office team and the broader NCEAS community!
 
 ## Palette Examples
 
