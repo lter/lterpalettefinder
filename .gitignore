@@ -50,7 +50,9 @@ metadata/UCSB_open-source-form.pdf
 # Extracted palettes from official photos
 update-palette-options/official palettes/
 
-# CRAN Submission stuff
+# CRAN submission stuff
 CRAN-SUBMISSION
 lterpalettefinder_1.0.0.tar.gz
 
+# Pkgdown directory
+docs/
