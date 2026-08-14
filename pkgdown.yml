@@ -3,7 +3,7 @@ pkgdown: 2.2.1
 pkgdown_sha: ~
 articles:
   lterpalettefinder: lterpalettefinder.html
-last_built: 2026-08-14T14:31Z
+last_built: 2026-08-14T14:39Z
 urls:
   reference: https://lter.github.io/lterpalettefinder/reference
   article: https://lter.github.io/lterpalettefinder/articles
