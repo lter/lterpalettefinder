@@ -47,7 +47,7 @@ These palette examples were generated from photos at LTER sites.
 |:--:|:--:|
 | ![Photo credit: SBC LTER](reference/figures/SBC-kelp-forest.jpeg) | ![](reference/figures/SBC_kelp-forest-palette.jpg) |
 
-### [Arctic LTER](https://arc-lter.ecosystems.mbl.edu/) + `palette_ggdemo`
+### [Arctic LTER](https://arc-lter.lamont.columbia.edu/) + `palette_ggdemo`
 
 | **Image** | **Palette** |
 |:--:|:--:|
