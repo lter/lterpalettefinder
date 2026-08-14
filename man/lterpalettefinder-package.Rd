@@ -18,6 +18,11 @@ Useful links:
 \author{
 \strong{Maintainer}: Nicholas J Lyon \email{nickjlyon@gmail.com} (\href{https://orcid.org/0000-0003-3905-1078}{ORCID})
 
+Authors:
+\itemize{
+  \item Nicholas J Lyon \email{nickjlyon@gmail.com} (\href{https://orcid.org/0000-0003-3905-1078}{ORCID})
+}
+
 Other contributors:
 \itemize{
   \item Gabe De La Rosa \email{delarosa@nceas.ucsb.edu} [contributor]

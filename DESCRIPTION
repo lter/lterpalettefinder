@@ -1,6 +1,7 @@
 Package: lterpalettefinder
 Type: Package
 Title: Extract Color Palettes from Photos and Pick Official LTER Palettes
+Date: 2026-08-14
 Version: 1.1.0.900
 Authors@R: c(
   person(given = "Nicholas J", 
@@ -32,7 +33,6 @@ Encoding: UTF-8
 LazyData: true
 Language: en-US
 BugReports: https://github.com/lter/lterpalettefinder/issues
-RoxygenNote: 7.3.3
 Depends:
     R (>= 3.5)
 Imports: 
@@ -54,3 +54,4 @@ Suggests:
     testthat (>= 3.0.0)
 VignetteBuilder: knitr
 Config/testthat/edition: 3
+Config/roxygen2/version: 8.1.0
