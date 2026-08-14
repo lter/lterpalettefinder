@@ -11,6 +11,7 @@ Allows identification of palettes derived from LTER (Long Term Ecological Resear
 \seealso{
 Useful links:
 \itemize{
+  \item \url{https://lter.github.io/lterpalettefinder/}
   \item Report bugs at \url{https://github.com/lter/lterpalettefinder/issues}
 }
 
